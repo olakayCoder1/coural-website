@@ -1,0 +1,48 @@
+'use client'
+
+import Image from 'next/image'
+
+export default function Header() {
+  return (
+    <header className="relative z-50">
+      <div className="max-w-7xl mx-auto px-8 py-3">
+        <div className="flex items-center justify-between">
+          {/* Logo */}
+          <div className="flex items-center">
+            <Image
+              src="/images/logo.svg"
+              alt="Curoal"
+              width={120}
+              height={32}
+              className="h-8 w-auto"
+            />
+          </div>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center space-x-8 bg-white rounded-full px-6 py-2 shadow-sm border border-gray-100">
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+              Home
+            </a>
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+              Features
+            </a>
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+              Pricing
+            </a>
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+              Blog
+            </a>
+            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+              Developer
+            </a>
+          </nav>
+
+          {/* CTA Button */}
+          <button className="bg-blue-600 text-white px-8 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
+            Get Started
+          </button>
+        </div>
+      </div>
+    </header>
+  )
+}
