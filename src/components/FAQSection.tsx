@@ -67,7 +67,7 @@ export default function FAQSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Choose a plan that's fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
+              Choose a plan that&apos;s fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
             </motion.p>
           </div>
 

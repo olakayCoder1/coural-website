@@ -76,7 +76,7 @@ export default function HeroCTA({
             style={{
               ...layer.style,
               opacity: layer.opacity || 1,
-              mixBlendMode: layer.blendMode as any || 'normal'
+              mixBlendMode: (layer.blendMode as React.CSSProperties['mixBlendMode']) || 'normal'
             }}
           >
             {layer.type === 'image' && layer.src && (

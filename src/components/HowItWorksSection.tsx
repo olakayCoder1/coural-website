@@ -48,7 +48,7 @@ export default function HowItWorksSection() {
             >
               Focus on Growth,
               <br />
-              We'll Handle the Rest.
+              We&apos;ll Handle the Rest.
             </motion.h2>
 
             <motion.p
