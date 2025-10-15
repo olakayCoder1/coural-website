@@ -53,6 +53,28 @@ function parseStatNumber(statString: string) {
   return { number: 0, suffix: statString };
 }
 
+// Individual stat item component to properly use hooks
+function StatItem({ stat, index, isInView }: { stat: { number: string; description: string }, index: number, isInView: boolean }) {
+  const { number, suffix } = parseStatNumber(stat.number);
+  const animatedCount = useCountUp(number, 2000 + index * 200, isInView);
+  
+  return (
+    <motion.div
+      className="text-center"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+    >
+      <div className="text-4xl lg:text-5xl font-bold text-blue-900 mb-2">
+        {animatedCount}{suffix}
+      </div>
+      <div className="text-sm lg:text-base text-gray-600">
+        {stat.description}
+      </div>
+    </motion.div>
+  );
+}
+
 export default function StatsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -85,27 +107,14 @@ export default function StatsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          {stats.map((stat, index) => {
-            const { number, suffix } = parseStatNumber(stat.number);
-            const animatedCount = useCountUp(number, 2000 + index * 200, isInView);
-            
-            return (
-              <motion.div
-                key={index}
-                className="text-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-              >
-                <div className="text-4xl lg:text-5xl font-bold text-blue-900 mb-2">
-                  {animatedCount}{suffix}
-                </div>
-                <div className="text-sm lg:text-base text-gray-600">
-                  {stat.description}
-                </div>
-              </motion.div>
-            );
-          })}
+          {stats.map((stat, index) => (
+            <StatItem 
+              key={index} 
+              stat={stat} 
+              index={index} 
+              isInView={isInView} 
+            />
+          ))}
         </motion.div>
       </div>
     </section>
