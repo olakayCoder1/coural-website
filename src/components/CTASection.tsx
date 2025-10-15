@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import BadgeWithImage from './BadgeWithImage';
+import { Button } from './Button';
 
 export default function CTASection() {
   return (
@@ -65,14 +66,20 @@ export default function CTASection() {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           {/* Primary Button - Try for Free */}
-          <button className="bg-white text-blue-600 hover:bg-blue-50 px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105 shadow-lg hover:shadow-xl">
-            Try for Free
-          </button>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button>Try for Free</Button>
+          </motion.div>
 
           {/* Secondary Button - Book a Demo */}
-          <button className="bg-white/20 backdrop-blur-sm text-white border border-white/30 hover:bg-white/30 px-8 py-4 rounded-xl font-semibold transition-all duration-200 transform hover:scale-105">
-            Book a Demo
-          </button>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <Button>Book a Demo</Button>
+          </motion.div>
         </motion.div>
       </div>
 

@@ -1,10 +1,11 @@
 'use client'
 
 import Image from 'next/image'
+import { Button } from './Button'
 
 export default function Header() {
   return (
-    <header className="relative z-50">
+    <header className="relative z-50 bg-white">
       <div className="max-w-7xl mx-auto px-8 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -38,9 +39,7 @@ export default function Header() {
           </nav>
 
           {/* CTA Button */}
-          <button className="bg-blue-600 text-white px-8 py-2 rounded-full font-semibold hover:bg-blue-700 transition-colors">
-            Get Started
-          </button>
+          <Button>Get Started</Button>
         </div>
       </div>
     </header>

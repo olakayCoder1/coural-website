@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
+import { Button } from './Button';
 
 interface BackgroundLayer {
   type: 'image' | 'gradient' | 'color';
@@ -200,24 +201,24 @@ export default function HeroCTA({
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               {primaryButton && (
-                <motion.button
-                  onClick={primaryButton.onClick}
-                  className={primaryButton.className || "bg-blue-600 text-white px-8 py-3 rounded-full font-semibold text-lg hover:bg-blue-700 transition-all duration-200 shadow-lg hover:shadow-xl"}
+                <motion.div
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {primaryButton.text}
-                </motion.button>
+                  <Button onClick={primaryButton.onClick}>
+                    {primaryButton.text}
+                  </Button>
+                </motion.div>
               )}
               {secondaryButton && (
-                <motion.button
-                  onClick={secondaryButton.onClick}
-                  className={secondaryButton.className || "bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg border border-gray-200 hover:bg-gray-50 transition-all duration-200 shadow-sm"}
+                <motion.div
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                 >
-                  {secondaryButton.text}
-                </motion.button>
+                  <Button onClick={secondaryButton.onClick} variant="secondary">
+                    {secondaryButton.text}
+                  </Button>
+                </motion.div>
               )}
             </motion.div>
           )}

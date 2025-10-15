@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import BadgeWithImage from './BadgeWithImage';
+import { Button } from './Button';
 
 export default function IntegrationsSection() {
   return (
@@ -38,9 +39,7 @@ export default function IntegrationsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          <button className="bg-blue-500 hover:bg-blue-600 text-white px-8 py-3 rounded-full font-medium transition-colors duration-200">
-            Explore
-          </button>
+          <Button>Explore</Button>
         </motion.div>
 
         {/* Integration Icons Layout */}

@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
+import { Button } from './Button';
 
 export default function BlogSection() {
   const blogPosts = [
@@ -11,9 +12,9 @@ export default function BlogSection() {
       category: "Finance",
       date: "Oct 10, 2025",
       author: "John Doe",
-      title: "Smart Payment Management For Task Automation",
+      title: "Smart Payment Management For Task Automation.",
       description: "Track and optimize all your transactions from one centralized dashboard.",
-      image: "/images/chat-ui.png",
+      image: "/images/blog-image.avif",
       readMoreLink: "#"
     },
     {
@@ -21,9 +22,9 @@ export default function BlogSection() {
       category: "Finance",
       date: "Oct 10, 2025",
       author: "John Doe",
-      title: "Smart Payment Management For Task Automation",
+      title: "Smart Payment Management For Task Automation.",
       description: "Track and optimize all your transactions from one centralized dashboard.",
-      image: "/images/chat-ui.png",
+      image: "/images/blog-image.avif",
       readMoreLink: "#"
     },
     {
@@ -31,9 +32,9 @@ export default function BlogSection() {
       category: "Finance",
       date: "Oct 10, 2025",
       author: "John Doe",
-      title: "Smart Payment Management For Task Automation",
+      title: "Smart Payment Management For Task Automation.",
       description: "Track and optimize all your transactions from one centralized dashboard.",
-      image: "/images/chat-ui.png",
+      image: "/images/blog-image.avif",
       readMoreLink: "#"
     }
   ];
@@ -69,92 +70,77 @@ export default function BlogSection() {
           </motion.p>
         </div>
 
-        {/* Blog Posts and Explore More Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        {/* Blog Posts Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Top Row - Two Blog Posts */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:col-span-2">
-            {blogPosts.slice(0, 2).map((post, index) => (
-              <motion.article
-                key={post.id}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
-              >
-                {/* Blog Post Image */}
-                <div className="relative w-48 h-48 flex-shrink-0 overflow-hidden">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    fill
-                    className="object-cover hover:scale-105 transition-transform duration-300"
+          {blogPosts.slice(0, 2).map((post, index) => (
+            <motion.article
+              key={post.id}
+              className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+            >
+              {/* Blog Post Image */}
+              <div className="relative w-[250px] h-full flex-shrink-0 overflow-hidden rounded-2xl">
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-300"
+                />
+                {/* Category Badge Overlay */}
+                <div className="absolute top-4 left-4">
+                  <BadgeWithImage  
+                  text={post.category}  
+                  extendBaseClass={true} 
+                  className=' text-gray-700 py-1 px-2 rounded-full'
+                  imageClassName='w-3 h-3 mr-2'
                   />
-                  {/* Category Badge Overlay */}
-                  <div className="absolute top-4 left-4">
-                    <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                      <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
-                        <path fillRule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clipRule="evenodd"/>
-                      </svg>
-                      {post.category}
-                    </span>
-                  </div>
                 </div>
+              </div>
 
-                {/* Blog Post Content */}
-                <div className="p-6 flex-1 flex flex-col">
-
+              {/* Blog Post Content */}
+              <div className="p-6 flex-1 flex flex-col justify-between">
+                <div>
                   {/* Date and Author */}
-                  <div className="flex items-center text-sm text-gray-500 mb-4">
+                  <div className="flex items-center text-sm text-gray-500 mb-3">
                     <span>{post.date}</span>
                     <span className="mx-2">|</span>
                     <span>By {post.author}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
+                  <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
                     {post.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-4 line-clamp-2 flex-1">
+                  <p className="text-gray-600 text-sm line-clamp-2 mb-4">
                     {post.description}
                   </p>
-
-                  {/* Read More Link */}
-                  <a
-                    href={post.readMoreLink}
-                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 mt-auto"
-                  >
-                    Read More
-                    <svg
-                      className="w-4 h-4 ml-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                  </a>
                 </div>
-              </motion.article>
-            ))}
-          </div>
+
+                {/* Read More Link */}
+                <a
+                  href={post.readMoreLink}
+                  className="inline-flex items-center font-medium transition-colors duration-200 text-sm"
+                >
+                  Read More
+                </a>
+              </div>
+            </motion.article>
+          ))}
 
           {/* Bottom Row - Third Blog Post */}
           <motion.article
-            className="bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-lg transition-shadow duration-300 flex"
+            className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
           >
             {/* Blog Post Image */}
-            <div className="relative w-48 h-48 flex-shrink-0 overflow-hidden">
+            <div className="relative w-[250px]  h-full flex-shrink-0 overflow-hidden  rounded-2xl">
               <Image
                 src={blogPosts[2].image}
                 alt={blogPosts[2].title}
@@ -162,97 +148,81 @@ export default function BlogSection() {
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
               {/* Category Badge Overlay */}
+              
               <div className="absolute top-4 left-4">
-                <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
-                  <svg className="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"/>
-                    <path fillRule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clipRule="evenodd"/>
-                  </svg>
-                  {blogPosts[2].category}
-                </span>
+                <BadgeWithImage  
+                text={blogPosts[2].category}  
+                extendBaseClass={true} 
+                className=' text-gray-700'
+                />
               </div>
             </div>
 
             {/* Blog Post Content */}
-            <div className="p-6 flex-1 flex flex-col">
+            <div className="p-6 flex-1 flex flex-col justify-between">
+              <div>
+                {/* Date and Author */}
+                <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <span>{blogPosts[2].date}</span>
+                  <span className="mx-2">|</span>
+                  <span>By {blogPosts[2].author}</span>
+                </div>
 
-              {/* Date and Author */}
-              <div className="flex items-center text-sm text-gray-500 mb-4">
-                <span>{blogPosts[2].date}</span>
-                <span className="mx-2">|</span>
-                <span>By {blogPosts[2].author}</span>
+                {/* Title */}
+                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                  {blogPosts[2].title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                  {blogPosts[2].description}
+                </p>
               </div>
-
-              {/* Title */}
-              <h3 className="text-xl font-semibold text-gray-900 mb-3 line-clamp-2">
-                {blogPosts[2].title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-gray-600 mb-4 line-clamp-2 flex-1">
-                {blogPosts[2].description}
-              </p>
 
               {/* Read More Link */}
               <a
                 href={blogPosts[2].readMoreLink}
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200 mt-auto"
+                className="inline-flex items-center  font-medium transition-colors duration-200 text-sm"
               >
                 Read More
-                <svg
-                  className="w-4 h-4 ml-1"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M9 5l7 7-7 7"
-                  />
-                </svg>
+          
               </a>
             </div>
           </motion.article>
 
           {/* Bottom Right - Explore More Section */}
           <motion.div
-            className="bg-blue-50 rounded-2xl p-8 flex flex-col justify-center"
+            className="bg-blue-50 rounded-2xl p-4 flex flex-col  h-[200px] space-y-4"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.6 }}
           >
-            {/* Blue Icon */}
-            <div className="w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center mb-6">
-              <svg
-                className="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
-                />
-              </svg>
+            {/* Left side - Icon and Content */}
+            <Image
+              src="/images/icons/explore-blog.svg.png"
+              alt="Explore Blog"
+              width={40}
+              height={40}
+              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+            />
+            <div className="flex items-center justify-between gap-4 flex-1">
+              {/* Blue Icon - Simple Square/Cube */}
+              {/* Text Content */}
+              <div className=' max-w-2/4'>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Want to read more blogs?
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  Our platform is crafted to deliver seamless functionality across every touchpoint.
+                </p>
+              </div>
+              <div className="ml-6">
+              <Button>Explore More</Button>
             </div>
-            
-            <div className="mb-6">
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                Want to read more blogs?
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                Our platform is crafted to deliver seamless functionality across every touchpoint.
-              </p>
             </div>
 
-            {/* Explore More Button */}
-            <button className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl font-medium transition-colors duration-200 self-start">
-              Explore More
-            </button>
+            {/* Right side - Button */}
+            
           </motion.div>
         </div>
       </div>

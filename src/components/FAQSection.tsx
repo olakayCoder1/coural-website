@@ -1,11 +1,23 @@
 'use client';
 
-import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
+import { useState, useRef } from 'react';
 import BadgeWithImage from './BadgeWithImage';
 
 export default function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
+  
+  // Viewport detection refs
+  const badgeRef = useRef(null);
+  const headerRef = useRef(null);
+  const descriptionRef = useRef(null);
+  const faqListRef = useRef(null);
+  
+  // Viewport detection hooks
+  const badgeInView = useInView(badgeRef, { once: true, margin: "-100px" });
+  const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
+  const descriptionInView = useInView(descriptionRef, { once: true, margin: "-100px" });
+  const faqListInView = useInView(faqListRef, { once: true, margin: "-100px" });
 
   const faqs = [
     {
@@ -46,40 +58,60 @@ export default function FAQSection() {
           {/* Left Side - Header Content */}
           <div>
             {/* Badge */}
-            <div className="mb-8">
+            <motion.div 
+              ref={badgeRef}
+              className="mb-8"
+              initial={{ opacity: 0, y: 30 }}
+              animate={badgeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <BadgeWithImage text="FAQ's" />
-            </div>
+            </motion.div>
 
             {/* Header */}
             <motion.h2
+              ref={headerRef}
               className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             >
               Everything You Need to Know, All in One Place
             </motion.h2>
 
             {/* Description */}
             <motion.p
+              ref={descriptionRef}
               className="text-lg text-gray-600 leading-relaxed"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              initial={{ opacity: 0, y: 30 }}
+              animate={descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             >
               Choose a plan that&apos;s fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
             </motion.p>
           </div>
 
           {/* Right Side - FAQ Items */}
-          <div className="space-y-4">
+          <div ref={faqListRef} className="space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={faq.id}
                 className="bg-blue-50 rounded-2xl overflow-hidden"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+                initial={{ opacity: 0, y: 40, scale: 0.95 }}
+                animate={faqListInView ? { 
+                  opacity: 1, 
+                  y: 0, 
+                  scale: 1 
+                } : { 
+                  opacity: 0, 
+                  y: 40, 
+                  scale: 0.95 
+                }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: faqListInView ? 0.6 + index * 0.1 : 0,
+                  ease: "easeOut"
+                }}
               >
                 <button
                   onClick={() => toggleFAQ(faq.id)}

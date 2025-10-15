@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import Badge from './Badge';
 import ChatInterface from './ChatInterface';
 import BadgeWithImage from './BadgeWithImage';
@@ -11,42 +12,42 @@ export default function WhyChooseCuoralSection() {
       id: 'unified-communication',
       title: 'Unified Communication',
       description: 'Manage chat, email, and automation in one central platform - no more switching between tools.',
-      icon: '💬',
+      icon: '/images/icons/message.png',
       position: 'top-left'
     },
     {
       id: 'ai-powered-support',
       title: 'AI-Powered Support',
       description: 'Leverage intelligent bots that assist customers instantly and escalate only when needed.',
-      icon: '🤖',
+      icon: '/images/icons/support.png',
       position: 'top-right'
     },
     {
       id: 'smart-automation',
       title: 'Smart Automation',
       description: 'Automate repetitive workflows and let Cuoral handle responses, routing and ticketing effortlessly.',
-      icon: '⚙️',
+      icon: '/images/icons/setting.png',
       position: 'middle-left'
     },
     {
       id: 'proactive-engagement',
       title: 'Proactive Engagement',
       description: 'Reach out before issues arise with real-time monitoring and proactive notifications.',
-      icon: '🔔',
+      icon: '/images/icons/notification.png',
       position: 'middle-right'
     },
     {
       id: 'advance-analytics',
       title: 'Advance Analytics',
       description: 'Track Performance, customer satisfaction, and engagement metrics with real-time insights.',
-      icon: '📊',
+      icon: '/images/icons/chart.png',
       position: 'bottom-left'
     },
     {
       id: 'customer-intelligence',
       title: 'Customer Intelligence',
       description: 'Gain deeper understanding of customer behavior to create personalized experiences.',
-      icon: '🧠',
+      icon: '/images/icons/brain.png',
       position: 'bottom-right'
     }
   ];
@@ -114,7 +115,13 @@ export default function WhyChooseCuoralSection() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">{feature.icon}</span>
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
@@ -141,7 +148,13 @@ export default function WhyChooseCuoralSection() {
                 transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
-                  <span className="text-2xl">{feature.icon}</span>
+                  <Image
+                    src={feature.icon}
+                    alt={feature.title}
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
                 </div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}

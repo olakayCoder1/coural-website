@@ -1,10 +1,17 @@
 'use client'
 
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
+import { useRef } from 'react'
 import { Cog6ToothIcon, ChatBubbleLeftRightIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 import BadgeWithImage from './BadgeWithImage'
 
 export default function HowItWorksSection() {
+  const ref = useRef(null)
+  const isInView = useInView(ref, { 
+    threshold: 0.3,
+    margin: "-100px 0px -100px 0px"
+  })
+
   const steps = [
     {
       step: "Step 1",
@@ -33,7 +40,7 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section className="py-24 px-6 lg:px-8 bg-white">
+    <section ref={ref} className="py-24 px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-left mb-20">
@@ -69,31 +76,99 @@ export default function HowItWorksSection() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className={`${step.bgColor} rounded-3xl p-8 text-left relative h-[400px] flex flex-col`}
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.6 + index * 0.2 }}
+              className={`${step.bgColor} rounded-3xl p-8 text-left relative h-[400px] flex flex-col overflow-hidden`}
+              initial={{ 
+                opacity: 0,
+                scale: 0.8,
+                rotateY: -15,
+                z: -index * 20,
+                x: index * 30,
+                y: index * 10
+              }}
+              animate={{ 
+                opacity: isInView ? 1 : 0,
+                scale: isInView ? 1 : 0.8,
+                rotateY: isInView ? 0 : -15,
+                z: isInView ? 0 : -index * 20,
+                x: isInView ? 0 : index * 30,
+                y: isInView ? 0 : index * 10
+              }}
+              transition={{ 
+                duration: 0.8, 
+                delay: isInView ? 0.5 + index * 0.3 : index * 0.1,
+                ease: "easeInOut",
+                type: "spring",
+                stiffness: 100,
+                damping: 15
+              }}
+              style={{
+                transformStyle: "preserve-3d",
+                perspective: "1000px"
+              }}
             >
               {/* Step Badge */}
-         
-              <BadgeWithImage text={step.step} className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium mb-16 shadow-sm w-fit" />
+              <motion.div
+                initial={{ opacity: 0, y: -30, scale: 0.8 }}
+                animate={{ 
+                  opacity: isInView ? 1 : 0, 
+                  y: isInView ? 0 : -30,
+                  scale: isInView ? 1 : 0.8
+                }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: isInView ? 0.8 + index * 0.3 : 0,
+                  type: "spring",
+                  stiffness: 150
+                }}
+              >
+                <BadgeWithImage text={step.step} className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium mb-16 shadow-sm w-fit" />
+              </motion.div>
 
               {/* Icon */}
-              <div className="flex justify-center mb-16">
+              <motion.div 
+                className="flex justify-center mb-16"
+                initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
+                animate={{ 
+                  opacity: isInView ? 1 : 0, 
+                  scale: isInView ? 1 : 0,
+                  rotateZ: isInView ? 0 : -180
+                }}
+                transition={{ 
+                  duration: 0.7, 
+                  delay: isInView ? 1.1 + index * 0.3 : 0,
+                  type: "spring",
+                  stiffness: 120,
+                  damping: 12
+                }}
+              >
                 <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100">
                   <step.icon className={`w-10 h-10 ${step.iconColor}`} />
                 </div>
-              </div>
+              </motion.div>
 
               {/* Content */}
-              <div className="mt-auto text-center">
+              <motion.div 
+                className="mt-auto text-center"
+                initial={{ opacity: 0, y: 30, scale: 0.9 }}
+                animate={{ 
+                  opacity: isInView ? 1 : 0, 
+                  y: isInView ? 0 : 30,
+                  scale: isInView ? 1 : 0.9
+                }}
+                transition={{ 
+                  duration: 0.6, 
+                  delay: isInView ? 1.4 + index * 0.3 : 0,
+                  type: "spring",
+                  stiffness: 100
+                }}
+              >
                 <h3 className="text-xl font-semibold text-blue-900 mb-3">
                   {step.title}
                 </h3>
                 <p className="text-gray-600 text-sm leading-relaxed">
                   {step.description}
                 </p>
-              </div>
+              </motion.div>
             </motion.div>
           ))}
         </div>
