@@ -54,7 +54,6 @@ export default function HeroCTA({
   subtitle,
   primaryButton,
   secondaryButton,
-  dashboardImage,
   className = ''
 }: HeroV2Props) {
   return (

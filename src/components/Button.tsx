@@ -52,45 +52,6 @@ const secondaryBackgroundVariant: Variants = {
   },
 };
 
-const firstTextVariant: Variants = {
-  initial: {
-    y: 0,
-  },
-  hover: {
-    y: -20,
-    transition: {
-      duration: 1.125,
-      ease: [0.19, 1, 0.22, 1] as const,
-    },
-  },
-  animate: {
-    y: 0,
-    transition: {
-      duration: 1.125,
-      ease: [0.19, 1, 0.22, 1] as const,
-    },
-  },
-};
-
-const secondTextVariant: Variants = {
-  initial: {
-    y: 20,
-  },
-  hover: {
-    y: 0,
-    transition: {
-      duration: 1.125,
-      ease: [0.19, 1, 0.22, 1] as const,
-    },
-  },
-  animate: {
-    y: 20,
-    transition: {
-      duration: 1.125,
-      ease: [0.19, 1, 0.22, 1] as const,
-    },
-  },
-};
 
 const primaryFirstTextVariant: Variants = {
   initial: {

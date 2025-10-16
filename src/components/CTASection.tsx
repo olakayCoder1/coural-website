@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import BadgeWithImage from './BadgeWithImage';
 import { Button } from './Button';
 
 export default function CTASection() {

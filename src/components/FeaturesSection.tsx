@@ -1,7 +1,6 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Badge from './Badge'
 import ChatInterface from './ChatInterface'
 import BadgeWithImage from './BadgeWithImage'
 

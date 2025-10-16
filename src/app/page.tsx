@@ -1,9 +1,7 @@
 'use client'
 
-import { motion } from 'framer-motion'
-import Image from 'next/image'
+
 import Header from '@/components/Header'
-import HeroSection from '@/components/HeroSection'
 import TrustedBySection from '@/components/TrustedBySection'
 import FeaturesSection from '@/components/FeaturesSection'
 import StatsSection from '@/components/StatsSection'
@@ -13,7 +11,6 @@ import PricingSection from '@/components/PricingSection'
 import TestimonialsSection from '@/components/TestimonialsSection'
 import FAQSection from '@/components/FAQSection'
 import BlogSection from '@/components/BlogSection'
-import CTASection from '@/components/CTASection'
 import Footer from '@/components/Footer'
 import HowItWorksSection from '@/components/HowItWorksSection'
 import HeroV2 from '@/components/HeroV2'
@@ -96,7 +93,36 @@ export default function Home() {
       <StatsSection />
 
       {/* Integrations Section */}
-      <IntegrationsSection />
+      <IntegrationsSection 
+        backgroundLayers={[
+          {
+            type: 'image',
+            src: '/images/Background.png',
+            alt: 'Main background',
+            className: 'z-0'
+          },
+          {
+            type: 'image',
+            src: '/images/vector-left.png',
+            alt: 'Left vector overlay',
+            className: 'z-10',
+            style: {
+              objectPosition: 'left center',
+              objectFit: 'contain'
+            }
+          },
+          {
+            type: 'image',
+            src: '/images/vector-right.png',
+            alt: 'Right vector overlay',
+            className: 'z-10',
+            style: {
+              objectPosition: 'right center',
+              objectFit: 'contain'
+            }
+          }
+        ]}
+      />
 
       {/* Why Choose Cuoral Section */}
       <WhyChooseCuoralSection />
