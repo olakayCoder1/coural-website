@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
 import { Button } from './Button';
+import Header from './Header';
 
 interface BackgroundLayer {
   type: 'image' | 'gradient' | 'color';
@@ -59,8 +60,15 @@ export default function HeroV2({
 }: HeroV2Props) {
   return (
     <section className={`relative min-h-screen flex flex-col justify-center items-center px-6 lg:px-8 overflow-hidden ${className}`}>
+      {/* Header Overlay */}
+      <div className="absolute top-0 left-0 right-0 z-50 w-full">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <Header />
+        </div>
+      </div>
+      
       {/* Background Images Layer */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full" >
         {/* Default gradient background */}
         <div 
           className="absolute inset-0 w-full h-full"
@@ -156,8 +164,10 @@ export default function HeroV2({
         />
       </div>
 
+      
+
       {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full">
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-12 lg:pt-36" >
         <div className="text-center">
           {/* Badge */}
           {badge && (

@@ -1,7 +1,6 @@
 'use client'
 
 
-import Header from '@/components/Header'
 import TrustedBySection from '@/components/TrustedBySection'
 import FeaturesSection from '@/components/FeaturesSection'
 import StatsSection from '@/components/StatsSection'
@@ -20,9 +19,6 @@ import HeroCTA from '@/components/HeroCTA'
 export default function Home() {
   return (
     <div className="min-h-screen relative">
-      {/* Header */}
-      <Header />
-
       <HeroV2
         backgroundLayers={[
           {
@@ -73,7 +69,7 @@ export default function Home() {
           height: 800
         }}
         showFloatingElements={true}
-        className="pt-20"
+        className=""
       />
 
       {/* Trusted By Section */}

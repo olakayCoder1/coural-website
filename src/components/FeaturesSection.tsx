@@ -1,11 +1,13 @@
 'use client'
 
 import { motion, useInView, useAnimation } from 'framer-motion'
-import { useRef, useEffect } from 'react'
+import { useRef, useEffect, useState } from 'react'
 import ChatInterface from './ChatInterface'
 import BadgeWithImage from './BadgeWithImage'
 
 export default function FeaturesSection() {
+  const [expandedSection, setExpandedSection] = useState(0) // First section expanded by default
+  
   const headerRef = useRef(null)
   const headerControls = useAnimation()
   const headerInView = useInView(headerRef, { margin: '-100px' })
@@ -109,56 +111,123 @@ export default function FeaturesSection() {
             <motion.div
               custom={0}
               variants={featureVariants}
-              className="border-l-2 border-blue-400 pl-6"
+              className={`border-l-2 pl-6 ${expandedSection === 0 ? 'border-blue-400' : 'border-gray-100'}`}
             >
-              <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                See Every Customer Moment
-              </h3>
-              <p className="text-[#232937] mb-4 leading-relaxed text-sm max-w-sm">
-                Spot friction as it happens. Watch live sessions, act instantly and keep every interaction seamless.
-              </p>
-              <ul className="space-y-1 text-[#232937] text-sm">
-                <li className="flex items-center text-[#0c2857]">
-                  <span className="text-[#0c2857] mr-2 font-medium">1.</span>
-                  Live Session Replays
-                </li>
-                <li className="flex items-center text-[#0c2857]">
-                  <span className="text-[#0c2857] mr-2 font-medium">2.</span>
-                  Real-Time Journey Insights
-                </li>
-                <li className="flex items-center text-[#0c2857]">
-                  <span className="text-gray-900 mr-2 font-medium">3.</span>
-                  Smart Escalation Hub
-                </li>
-              </ul>
+              <div 
+                className="cursor-pointer"
+                onClick={() => setExpandedSection(expandedSection === 0 ? -1 : 0)}
+              >
+                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                  See Every Customer Moment
+                </h3>
+                <p className="text-[#232937] mb-4 leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                  Spot friction as it happens. Watch live sessions, act instantly and keep every interaction seamless.
+                </p>
+              </div>
+              {expandedSection === 0 && (
+                <motion.ul 
+                  className="space-y-1 text-[#232937] text-sm"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">1.</span>
+                    Live Session Replays
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">2.</span>
+                    Real-Time Journey Insights
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-gray-900 mr-2 font-medium">3.</span>
+                    Smart Escalation Hub
+                  </li>
+                </motion.ul>
+              )}
             </motion.div>
 
             {/* Support That Thinks Ahead */}
             <motion.div
               custom={1}
               variants={featureVariants}
-              className="border-l-2 border-gray-100 pl-6"
+              className={`border-l-2 pl-6 ${expandedSection === 1 ? 'border-blue-400' : 'border-gray-100'}`}
             >
-              <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                Support That Thinks Ahead
-              </h3>
-              <p className="text-[#232937] leading-relaxed text-sm max-w-sm">
-                Predict issues, automate fixes, and turn every response into renewed trust
-              </p>
+              <div 
+                className="cursor-pointer"
+                onClick={() => setExpandedSection(expandedSection === 1 ? -1 : 1)}
+              >
+                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                  Support That Thinks Ahead
+                </h3>
+                <p className="text-[#232937] leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                  Predict issues, automate fixes, and turn every response into renewed trust
+                </p>
+              </div>
+              {expandedSection === 1 && (
+                <motion.ul 
+                  className="space-y-1 text-[#232937] text-sm mt-4"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">1.</span>
+                    Predictive Issue Detection
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">2.</span>
+                    Automated Response System
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-gray-900 mr-2 font-medium">3.</span>
+                    Trust Building Analytics
+                  </li>
+                </motion.ul>
+              )}
             </motion.div>
 
             {/* Turn Insight into Retention */}
             <motion.div
               custom={2}
               variants={featureVariants}
-              className="border-l-2 border-gray-100 pl-6"
+              className={`border-l-2 pl-6 ${expandedSection === 2 ? 'border-blue-400' : 'border-gray-100'}`}
             >
-              <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                Turn Insight into Retention
-              </h3>
-              <p className="text-[#232937] leading-relaxed text-sm max-w-sm">
-                Understand what drives loyalty and use data to build lasting customer confidence.
-              </p>
+              <div 
+                className="cursor-pointer"
+                onClick={() => setExpandedSection(expandedSection === 2 ? -1 : 2)}
+              >
+                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                  Turn Insight into Retention
+                </h3>
+                <p className="text-[#232937] leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                  Understand what drives loyalty and use data to build lasting customer confidence.
+                </p>
+              </div>
+              {expandedSection === 2 && (
+                <motion.ul 
+                  className="space-y-1 text-[#232937] text-sm mt-4"
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: 1, height: 'auto' }}
+                  exit={{ opacity: 0, height: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">1.</span>
+                    Loyalty Analytics Dashboard
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-[#0c2857] mr-2 font-medium">2.</span>
+                    Customer Confidence Metrics
+                  </li>
+                  <li className="flex items-center text-[#0c2857]">
+                    <span className="text-gray-900 mr-2 font-medium">3.</span>
+                    Retention Strategy Engine
+                  </li>
+                </motion.ul>
+              )}
             </motion.div>
           </motion.div>
 

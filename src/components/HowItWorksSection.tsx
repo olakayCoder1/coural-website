@@ -26,7 +26,7 @@ export default function HowItWorksSection() {
       step: "Step 2", 
       title: "See What Your Users Experience",
       description: "Replay user sessions, visualize friction in real time, and detect silent issues before they become visible complaints. Every click, delay and interaction becomes actionable insight.",
-      icon: "/images/icons/how-it-works/message.png",
+      icon: "/images/icons/how-it-works/chat.png",
       // use background gradient
       bgColor: "bg-gradient-to-r from-red-100/50 to-red-200/50",
       iconColor: "text-red-500"
@@ -35,7 +35,7 @@ export default function HowItWorksSection() {
       step: "Step 3",
       title: "Act, Learn and Iterate",
       description: "Turn intelligence into growth. Resolve issues faster, automate recovery and measure the impact of every fix with data that strengthens trust and long-term retention.",
-      icon: "/images/icons/how-it-works/stats.png",
+      icon: "/images/icons/how-it-works/growth.png",
       // use background gradient
       bgColor: "bg-gradient-to-r from-green-100/50 to-green-200/50",
       iconColor: "text-green-500"
@@ -43,7 +43,7 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section ref={ref} className="py-24 px-6 lg:px-8 bg-white">
+    <section ref={ref} className="py-24 px-6 lg:px-8 bg-white max-h-screen">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-left mb-20">
