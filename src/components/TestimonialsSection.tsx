@@ -75,7 +75,7 @@ export default function TestimonialsSection() {
           </div>
         </div>
         <div className="flex-1">
-          <h4 className="font-semibold text-gray-900">
+          <h4 className="font-semibold text-[#0c2857]">
           {testimonial.name}
         </h4>
           <StarRating rating={testimonial.rating} />
@@ -83,7 +83,7 @@ export default function TestimonialsSection() {
       </div>
 
       {/* Testimonial Text */}
-      <p className="text-gray-700 leading-relaxed mb-6 flex-1">
+      <p className="text-[#232937] leading-relaxed mb-6 flex-1">
         {testimonial.text}
       </p>
 
@@ -125,7 +125,7 @@ export default function TestimonialsSection() {
 
         {/* Header */}
         <motion.h2
-          className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6"
+          className="text-4xl lg:text-5xl font-bold text-[#0c2857] text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -135,7 +135,7 @@ export default function TestimonialsSection() {
 
         {/* Description */}
         <motion.p
-          className="text-lg text-gray-600 text-center mb-16 max-w-3xl mx-auto"
+          className="text-lg text-[#232937] text-center mb-16 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}

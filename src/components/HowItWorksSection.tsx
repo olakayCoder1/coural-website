@@ -2,8 +2,8 @@
 
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
-import { Cog6ToothIcon, ChatBubbleLeftRightIcon, ChartBarIcon } from '@heroicons/react/24/outline'
 import BadgeWithImage from './BadgeWithImage'
+import Image from 'next/image'
 
 export default function HowItWorksSection() {
   const ref = useRef(null)
@@ -17,24 +17,27 @@ export default function HowItWorksSection() {
       step: "Step 1",
       title: "Set Up Your Account",
       description: "Create your Cuoral workspace, invite your team, and integrate your favorite tools – all in one place.",
-      icon: Cog6ToothIcon,
-      bgColor: "bg-blue-100/50",
+      icon: "/images/icons/how-it-works/settings.png",
+      // use background gradient
+      bgColor: "bg-gradient-to-r from-blue-100/50 to-blue-200/50",
       iconColor: "text-blue-500"
     },
     {
       step: "Step 2", 
       title: "Engage Your Customers",
       description: "Start real-time conversations via chat, email, or automation – keeping every customer interaction unified.",
-      icon: ChatBubbleLeftRightIcon,
-      bgColor: "bg-red-100/50",
+      icon: "/images/icons/how-it-works/message.png",
+      // use background gradient
+      bgColor: "bg-gradient-to-r from-red-100/50 to-red-200/50",
       iconColor: "text-red-500"
     },
     {
       step: "Step 3",
       title: "Track & Optimize",
       description: "Measure customer satisfaction, monitor performance, and improve engagement with intelligent insights.",
-      icon: ChartBarIcon,
-      bgColor: "bg-green-100/50", 
+      icon: "/images/icons/how-it-works/stats.png",
+      // use background gradient
+      bgColor: "bg-gradient-to-r from-green-100/50 to-green-200/50",
       iconColor: "text-green-500"
     }
   ]
@@ -59,7 +62,7 @@ export default function HowItWorksSection() {
             </motion.h2>
 
             <motion.p
-              className="text-lg text-gray-600 max-w-sm mt-4"
+              className="text-lg  text-[#232937] max-w-sm mt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -76,7 +79,7 @@ export default function HowItWorksSection() {
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className={`${step.bgColor} rounded-3xl p-8 text-left relative h-[400px] flex flex-col overflow-hidden`}
+              className={`${step.bgColor} rounded-3xl p-8 text-left relative h-[450px] flex flex-col overflow-hidden`}
               initial={{ 
                 opacity: 0,
                 scale: 0.8,
@@ -95,7 +98,7 @@ export default function HowItWorksSection() {
               }}
               transition={{ 
                 duration: 0.8, 
-                delay: isInView ? 0.5 + index * 0.3 : index * 0.1,
+                delay: isInView ? 0.1 + index * 0.3 : index * 0.1,
                 ease: "easeInOut",
                 type: "spring",
                 stiffness: 100,
@@ -141,8 +144,15 @@ export default function HowItWorksSection() {
                   damping: 12
                 }}
               >
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-lg border border-gray-100">
-                  <step.icon className={`w-10 h-10 ${step.iconColor}`} />
+                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center ">
+                  {/* <step.icon className={`w-10 h-10 ${step.iconColor}`} /> */}
+                  <Image
+                    src={step.icon}
+                    alt={step.title}
+                    width={24}
+                    height={24}
+                    className='w-8 h-8'
+                  />
                 </div>
               </motion.div>
 
@@ -162,10 +172,10 @@ export default function HowItWorksSection() {
                   stiffness: 100
                 }}
               >
-                <h3 className="text-xl font-semibold text-blue-900 mb-3">
+                <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-[#232937] text-sm leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>

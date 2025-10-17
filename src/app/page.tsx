@@ -23,9 +23,6 @@ export default function Home() {
       {/* Header */}
       <Header />
 
-      {/* Hero Section */}
-      {/* <HeroSection /> */}
-
       <HeroV2
         backgroundLayers={[
           {

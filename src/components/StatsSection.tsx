@@ -65,7 +65,7 @@ function StatItem({ stat, index, isInView }: { stat: { number: string; descripti
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className="text-4xl lg:text-5xl font-bold text-blue-900 mb-2">
+      <div className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-2">
         {animatedCount}{suffix}
       </div>
       <div className="text-sm lg:text-base text-gray-600">
@@ -99,7 +99,7 @@ export default function StatsSection() {
   ];
 
   return (
-    <section ref={ref} className="py-16 bg-gray-50">
+    <section ref={ref} className="py-16 bg-white ">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           className="grid grid-cols-2 lg:grid-cols-4 gap-8"

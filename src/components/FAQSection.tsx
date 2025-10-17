@@ -71,7 +71,7 @@ export default function FAQSection() {
             {/* Header */}
             <motion.h2
               ref={headerRef}
-              className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
+              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -82,7 +82,7 @@ export default function FAQSection() {
             {/* Description */}
             <motion.p
               ref={descriptionRef}
-              className="text-lg text-gray-600 leading-relaxed"
+              className="text-lg text-[#232937] leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
@@ -117,7 +117,7 @@ export default function FAQSection() {
                   onClick={() => toggleFAQ(faq.id)}
                   className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-blue-100 transition-colors duration-200"
                 >
-                  <span className="text-lg font-medium text-gray-900 pr-4">
+                  <span className="text-lg font-medium text-[#0c2857] pr-4">
                     {faq.question}
                   </span>
                   <motion.div
@@ -151,7 +151,7 @@ export default function FAQSection() {
                       className="overflow-hidden"
                     >
                       <div className="px-6 pb-5 pt-0">
-                        <p className="text-gray-600 leading-relaxed">
+                        <p className="text-[#232937] leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

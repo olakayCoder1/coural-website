@@ -1,11 +1,55 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
 import { Button } from './Button';
 
 export default function BlogSection() {
+  const headerRef = useRef(null);
+  const headerControls = useAnimation();
+  const headerInView = useInView(headerRef, { once: true, margin: '-100px' });
+
+  const postsRef = useRef(null);
+  const postsControls = useAnimation();
+  const postsInView = useInView(postsRef, { once: true, margin: '-100px' });
+
+  useEffect(() => {
+    if (headerInView) {
+      headerControls.start('visible');
+    }
+  }, [headerInView, headerControls]);
+
+  useEffect(() => {
+    if (postsInView) {
+      postsControls.start('visible');
+    }
+  }, [postsInView, postsControls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const headerItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const headerTitleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const postVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const blogPosts = [
     {
       id: 1,
@@ -43,43 +87,48 @@ export default function BlogSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          {/* Badge */}
-          <div className="mb-8">
-            <BadgeWithImage text="Recent Blog" />
-          </div>
-
-          {/* Header */}
-          <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+        <div ref={headerRef} className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            animate={headerControls}
+            variants={containerVariants}
           >
-            Recent Blog Updates
-          </motion.h2>
+            <motion.div variants={headerItemVariants} className="mb-8">
+              <BadgeWithImage text="Recent Blog" />
+            </motion.div>
 
-          {/* Description */}
-          <motion.p
-            className="text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Choose a plan that fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
-          </motion.p>
+            {/* Header */}
+            <motion.h2
+              variants={headerTitleVariants}
+              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
+            >
+              Recent Blog Updates
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              variants={headerItemVariants}
+              className="text-lg text-[#232937] leading-relaxed max-w-2xl mx-auto"
+            >
+              Choose a plan that fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
+            </motion.p>
+          </motion.div>
         </div>
 
         {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <motion.div
+          ref={postsRef}
+          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          initial="hidden"
+          animate={postsControls}
+          variants={containerVariants}
+        >
           {/* Top Row - Two Blog Posts */}
-          {blogPosts.slice(0, 2).map((post, index) => (
+          {blogPosts.slice(0, 2).map((post) => (
             <motion.article
               key={post.id}
               className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
+              variants={postVariants}
             >
               {/* Blog Post Image */}
               <div className="relative w-[250px] h-full flex-shrink-0 overflow-hidden rounded-2xl">
@@ -116,7 +165,7 @@ export default function BlogSection() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                  <p className="text-[#232937] text-sm line-clamp-2 mb-4">
                     {post.description}
                   </p>
                 </div>
@@ -124,7 +173,7 @@ export default function BlogSection() {
                 {/* Read More Link */}
                 <a
                   href={post.readMoreLink}
-                  className="inline-flex items-center font-medium transition-colors duration-200 text-sm"
+                  className="inline-flex items-center font-medium transition-colors duration-200 text-sm text-[#232937]"
                 >
                   Read More
                 </a>
@@ -135,9 +184,7 @@ export default function BlogSection() {
           {/* Bottom Row - Third Blog Post */}
           <motion.article
             className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            variants={postVariants}
           >
             {/* Blog Post Image */}
             <div className="relative w-[250px]  h-full flex-shrink-0 overflow-hidden  rounded-2xl">
@@ -152,8 +199,6 @@ export default function BlogSection() {
               <div className="absolute top-4 left-4">
                 <BadgeWithImage  
                 text={blogPosts[2].category}  
-                extendBaseClass={true} 
-                className=' text-gray-700'
                 />
               </div>
             </div>
@@ -174,7 +219,7 @@ export default function BlogSection() {
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-600 text-sm line-clamp-2 mb-4">
+                <p className="text-[#232937] text-sm line-clamp-2 mb-4">
                   {blogPosts[2].description}
                 </p>
               </div>
@@ -182,7 +227,7 @@ export default function BlogSection() {
               {/* Read More Link */}
               <a
                 href={blogPosts[2].readMoreLink}
-                className="inline-flex items-center  font-medium transition-colors duration-200 text-sm"
+                className="inline-flex items-center  font-medium transition-colors duration-200 text-sm text-[#232937]"
               >
                 Read More
           
@@ -193,9 +238,7 @@ export default function BlogSection() {
           {/* Bottom Right - Explore More Section */}
           <motion.div
             className="bg-blue-50 rounded-2xl p-4 flex flex-col  h-[200px] space-y-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.6 }}
+            variants={postVariants}
           >
             {/* Left side - Icon and Content */}
             <Image
@@ -212,7 +255,7 @@ export default function BlogSection() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-2">
                   Want to read more blogs?
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
+                <p className="text-[#232937] text-sm leading-relaxed">
                   Our platform is crafted to deliver seamless functionality across every touchpoint.
                 </p>
               </div>
@@ -224,7 +267,7 @@ export default function BlogSection() {
             {/* Right side - Button */}
             
           </motion.div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

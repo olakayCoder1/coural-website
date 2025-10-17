@@ -20,7 +20,7 @@ interface BadgeWithImageProps {
 export default function BadgeWithImage({ 
   text,
   className,
-  baseClassName = "inline-flex items-center px-4 py-2 bg-white border border-white rounded-full text-blue-700 text-sm font-medium mb-8 shadow-sm",
+  baseClassName = "inline-flex items-center px-4 py-2 bg-white border border-white rounded-full text-[#232937] text-sm font-medium mb-8 shadow-sm",
   extendBaseClass = false,
   imageSrc = "/images/badge.svg",
   imageAlt = "Badge icon",

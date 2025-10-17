@@ -14,7 +14,7 @@ export default function ChatInterfaceWhyChooseUs() {
       <Image
         src="/images/chat-ui.png"
         alt="Chat UI"
-        width={350}
+        width={6000}
         height={450}
         className="w-full h-auto object-contain"
         priority

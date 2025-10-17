@@ -175,7 +175,7 @@ export default function HeroCTA({
 
           {/* Main Title */}
           <motion.h1
-            className="text-4xl lg:text-5xl xl:text-6xl font-bold text-blue-900 mb-6 leading-tight max-w-4xl mx-auto"
+            className="text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0c2857] mb-6 leading-tight max-w-4xl mx-auto"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
@@ -184,7 +184,7 @@ export default function HeroCTA({
 
           {/* Subtitle */}
           <motion.p
-            className="text-lg lg:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg lg:text-xl text-[#232937] mb-10 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}

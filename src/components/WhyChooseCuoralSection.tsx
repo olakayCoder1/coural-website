@@ -1,11 +1,109 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { motion, useInView, useAnimation } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
 import ChatInterfaceWhyChooseUs from './ChatInterfaceWhyChooseUs';
 
 export default function WhyChooseCuoralSection() {
+  const headerRef = useRef(null);
+  const headerControls = useAnimation();
+  const headerInView = useInView(headerRef, { once: true, margin: '-100px' });
+
+  const mobileFeaturesRef = useRef(null);
+  const mobileFeaturesControls = useAnimation();
+  const mobileFeaturesInView = useInView(mobileFeaturesRef, { once: true, margin: '-100px' });
+
+  const leftRef = useRef(null);
+  const leftControls = useAnimation();
+  const leftInView = useInView(leftRef, { once: true, margin: '-100px' });
+
+  const rightRef = useRef(null);
+  const rightControls = useAnimation();
+  const rightInView = useInView(rightRef, { once: true, margin: '-100px' });
+
+  const centerRef = useRef(null);
+  const centerControls = useAnimation();
+  const centerInView = useInView(centerRef, { once: true, margin: '-100px' });
+
+  useEffect(() => {
+    if (headerInView) {
+      headerControls.start('visible');
+    }
+  }, [headerInView, headerControls]);
+
+  useEffect(() => {
+    if (mobileFeaturesInView) {
+      mobileFeaturesControls.start('visible');
+    }
+  }, [mobileFeaturesInView, mobileFeaturesControls]);
+
+  useEffect(() => {
+    if (leftInView) {
+      leftControls.start('visible');
+    }
+  }, [leftInView, leftControls]);
+
+  useEffect(() => {
+    if (rightInView) {
+      rightControls.start('visible');
+    }
+  }, [rightInView, rightControls]);
+
+  useEffect(() => {
+    if (centerInView) {
+      centerControls.start({ opacity: 1, scale: 1, transition: { duration: 0.8 } });
+    }
+  }, [centerInView, centerControls]);
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  };
+
+  const headerItemVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const headerTitleVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const mobileFeatureVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const leftFeatureVariants = {
+    hidden: { opacity: 0, x: -30 },
+    visible: (i:number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        delay: i * 0.1,
+      },
+    }),
+  };
+
+  const rightFeatureVariants = {
+    hidden: { opacity: 0, x: 30 },
+    visible: (i:number) => ({
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.6,
+        delay: i * 0.1,
+      },
+    }),
+  };
+
   const leftColumnFeatures = [
     {
       id: 'unified-communication',
@@ -55,44 +153,51 @@ export default function WhyChooseCuoralSection() {
     <section className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div className="text-center mb-16">
-          {/* Badge */}
-          <BadgeWithImage text="Features"  />
-          
-
-          {/* Header */}
-          <motion.h2
-            className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+        <div ref={headerRef} className="text-center mb-16">
+          <motion.div
+            initial="hidden"
+            animate={headerControls}
+            variants={containerVariants}
           >
-            Why choose Cuoral
-          </motion.h2>
+            <motion.div variants={headerItemVariants}>
+              <BadgeWithImage text="Features"  />
+            </motion.div>
 
-          {/* Description */}
-          <motion.p
-            className="text-lg text-gray-600 max-w-3xl mx-auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            Designed for speed, built for scale - Cuoral helps your business<br />
-            grow through smarter customer relationships.
-          </motion.p>
+            {/* Header */}
+            <motion.h2
+              variants={headerTitleVariants}
+              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
+            >
+              Why choose Cuoral
+            </motion.h2>
+
+            {/* Description */}
+            <motion.p
+              variants={headerItemVariants}
+              className="text-lg text-[#232937] max-w-3xl mx-auto"
+            >
+              Designed for speed, built for scale - Cuoral helps your business<br />
+              grow through smarter customer relationships.
+            </motion.p>
+          </motion.div>
         </div>
 
         {/* Features Layout */}
         <div className="relative">
           {/* Mobile/Tablet Grid Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden">
-            {allFeatures.map((feature, index) => (
+          <motion.div
+            ref={mobileFeaturesRef}
+            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden"
+            initial="hidden"
+            animate={mobileFeaturesControls}
+            variants={containerVariants}
+          >
+            {allFeatures.map((feature) => (
               <motion.div
                 key={feature.id}
                 className="bg-white p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
+                variants={mobileFeatureVariants}
+                
               >
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
                   <Image
@@ -106,26 +211,31 @@ export default function WhyChooseCuoralSection() {
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-[#232937] leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
 
           {/* Desktop 3-Column Layout */}
-          <div className="hidden lg:grid lg:grid-cols-3 gap-4  rounded-3xl ">
+          <div className="hidden lg:grid lg:grid-cols-3 gap-4 rounded-3xl">
             {/* Left Column - Features */}
-            <div className="flex flex-col justify-center ">
+            <motion.div
+              ref={leftRef}
+              className="flex flex-col justify-center"
+              initial="hidden"
+              animate={leftControls}
+              variants={containerVariants}
+            >
               {leftColumnFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.id}
-                  className="bg-white p-4 transition-all duration-300 "
-                  initial={{ opacity: 0, x: -30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  custom={index}
+                  variants={leftFeatureVariants}
+                  className="bg-white p-4 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 ">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                     <Image
                       src={feature.icon}
                       alt={feature.title}
@@ -134,32 +244,42 @@ export default function WhyChooseCuoralSection() {
                       className="w-7 h-7"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed ml-2">
                     {feature.description}
                   </p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
 
             {/* Center Column - Chat Interface */}
-            <div className="flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl">
+            <motion.div
+              ref={centerRef}
+              className="flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={centerControls}
+            >
               <ChatInterfaceWhyChooseUs />
-            </div>
+            </motion.div>
 
             {/* Right Column - Features */}
-            <div className="flex flex-col justify-center ">
+            <motion.div
+              ref={rightRef}
+              className="flex flex-col justify-center"
+              initial="hidden"
+              animate={rightControls}
+              variants={containerVariants}
+            >
               {rightColumnFeatures.map((feature, index) => (
                 <motion.div
                   key={feature.id}
-                  className="bg-white p-4   transition-all duration-300  "
-                  initial={{ opacity: 0, x: 30 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                  custom={index}
+                  variants={rightFeatureVariants}
+                  className="bg-white p-4 transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 ">
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                     <Image
                       src={feature.icon}
                       alt={feature.title}
@@ -168,15 +288,15 @@ export default function WhyChooseCuoralSection() {
                       className="w-7 h-7"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight">
+                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-relaxed">
+                  <p className="text-sm text-gray-600 leading-relaxed ml-2">
                     {feature.description}
                   </p>
                 </motion.div>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>

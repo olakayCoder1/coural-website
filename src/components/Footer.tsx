@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export default function Footer() {
   const productLinks = [
@@ -77,29 +78,27 @@ export default function Footer() {
             >
               {/* Logo */}
               <div className="flex items-center mb-4">
-                <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center mr-3">
-                  <div className="grid grid-cols-2 gap-0.5">
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                    <div className="w-1.5 h-1.5 bg-white rounded-full"></div>
-                  </div>
-                </div>
-                <span className="text-2xl font-bold text-gray-900">Cuoral</span>
+              <Image
+                src="/images/logo-dark.svg"
+                alt="Curoal"
+                width={120}
+                height={32}
+                className="h-6 w-auto"
+              />
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 mb-6 max-w-sm">
+              <p className="text-[#232937] mb-6 lg:mb-12 max-w-sm">
                 Your Ultimate platform for proactive customer experience, giving you intelligence, engagement and friction alerts in real-time.
               </p>
 
               {/* Social Media Icons */}
-              <div className="flex space-x-4">
+              <div className="flex space-x-1">
                 {socialLinks.map((social) => (
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-lg flex items-center justify-center text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    className="w-10 h-10 rounded-lg flex items-center justify-center text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -115,13 +114,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Product</h3>
+            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Product</h3>
             <ul className="space-y-3">
               {productLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -136,13 +135,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Company</h3>
+            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Company</h3>
             <ul className="space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -157,13 +156,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Resources</h3>
+            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Resources</h3>
             <ul className="space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -181,7 +180,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Copyright */}
-          <p className="text-gray-600 mb-4 md:mb-0">
+          <p className="text-[#232937] mb-4 md:mb-0">
             2025 Cuoral. All rights reserved
           </p>
 
@@ -189,19 +188,19 @@ export default function Footer() {
           <div className="flex space-x-6">
             <a
               href="#"
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Terms Of Service
             </a>
             <a
               href="#"
-              className="text-gray-600 hover:text-gray-900 transition-colors duration-200"
+              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Cookie Settings
             </a>

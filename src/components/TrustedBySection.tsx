@@ -18,7 +18,7 @@ export default function TrustedBySection() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-gray-500 text-lg font-semibold mb-16 tracking-wide"
+          className="text-[#232937] text-lg font-semibold mb-16 tracking-wide"
         >
           Trusted by 73,000 + businesses worldwide
         </motion.p>

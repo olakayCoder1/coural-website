@@ -21,19 +21,19 @@ export default function Header() {
 
           {/* Navigation */}
           <nav className="hidden md:flex items-center space-x-8 bg-white rounded-full px-6 py-2 shadow-sm border border-gray-100">
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+            <a href="#" className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors">
               Home
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+            <a href="#" className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors">
               Features
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+            <a href="#" className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors">
               Pricing
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+            <a href="#" className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors">
               Blog
             </a>
-            <a href="#" className="text-gray-700 hover:text-blue-600 font-medium py-2 transition-colors">
+            <a href="#" className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors">
               Developer
             </a>
           </nav>

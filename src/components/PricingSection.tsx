@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import BadgeWithImage from './BadgeWithImage';
+import { CircleCheck } from 'lucide-react';
 
 export default function PricingSection() {
   const pricingPlans = [
@@ -56,7 +57,7 @@ export default function PricingSection() {
 
         {/* Header */}
         <motion.h2
-          className="text-4xl lg:text-5xl font-bold text-gray-900 text-center mb-6"
+          className="text-4xl lg:text-5xl font-bold text-[#0c2857] text-center mb-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -66,7 +67,7 @@ export default function PricingSection() {
 
         {/* Description */}
         <motion.p
-          className="text-lg text-gray-600 text-center mb-16 max-w-3xl mx-auto"
+          className="text-lg text-[#232937] text-center mb-16 max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
@@ -108,17 +109,17 @@ export default function PricingSection() {
               {/* Price */}
               <div className="mb-6">
                 <span className="text-4xl font-bold text-gray-900">${plan.price}</span>
-                <span className="text-gray-600 ml-2">/ month</span>
+                <span className="text-[#232937] ml-2">/ month</span>
               </div>
 
               {/* Description */}
-              <p className="text-gray-600 mb-8 leading-relaxed">
+              <p className="text-[#232937] mb-8 leading-relaxed">
                 {plan.description}
               </p>
 
               {/* Get Started Button */}
               <button
-                className={`w-full py-3 px-6 rounded-full font-medium transition-colors duration-200 mb-8 ${
+                className={`w-full py-3 px-6 rounded-full font-medium transition-colors duration-200 mb-8  cursor-pointer ${
                   plan.isPopular
                     ? 'bg-gray-800 hover:bg-gray-900 text-white'
                     : 'bg-blue-500 hover:bg-blue-600 text-white'
@@ -131,20 +132,10 @@ export default function PricingSection() {
               <div className="space-y-4">
                 {plan.features.map((feature, featureIndex) => (
                   <div key={featureIndex} className="flex items-center gap-3">
-                    <div className="w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                      <svg
-                        className="w-3 h-3 text-green-600"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
+                    <div className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0">
+                      <CircleCheck  className=' text-green-500'/>
                     </div>
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-[#232937]">{feature}</span>
                   </div>
                 ))}
               </div>
