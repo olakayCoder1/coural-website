@@ -102,7 +102,7 @@ export default function BlogSection() {
               variants={headerTitleVariants}
               className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
             >
-              Recent Blog Updates
+              Recent Insights
             </motion.h2>
 
             {/* Description */}
@@ -110,7 +110,7 @@ export default function BlogSection() {
               variants={headerItemVariants}
               className="text-lg text-[#232937] leading-relaxed max-w-2xl mx-auto"
             >
-              Choose a plan that fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
+              Explore fresh perspectives on Customer Intelligence, Trust Stack and Digital Experience. Ideas shaping how modern businesses connect and grow.
             </motion.p>
           </motion.div>
         </div>

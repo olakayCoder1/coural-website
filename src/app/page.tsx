@@ -53,10 +53,11 @@ export default function Home() {
           }
         ]}
         badge={{
-          text: "Empower your Business with AI-Powered Insights"
+          text: "Build Trust. Detect Friction. Grow Confidently"
         }}
         title="Connect Better with<br />Your Customers"
-        subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
+        subtitle="Connect Better with Your Customers - Turn every customer moment into <br />a trust-building experience powered by Cuoral Intelligence"
+        // subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
         primaryButton={{
           text: "Try for Free",
           onClick: () => console.log("Try for Free clicked")
@@ -169,8 +170,8 @@ export default function Home() {
         badge={{
           text: "Integrations"
         }}
-        title="Connect Better with<br />Your Customers"
-        subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
+        title="Connect Every System.<br /> Understand Every Signal"
+        subtitle="Cuoral brings your tools, teams and touchpoints together, creating one intelligent flow where insight, action and trust move as one."
         primaryButton={{
           text: "Try for Free",
           onClick: () => console.log("Try for Free clicked")

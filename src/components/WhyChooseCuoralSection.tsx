@@ -108,19 +108,19 @@ export default function WhyChooseCuoralSection() {
     {
       id: 'unified-communication',
       title: 'Unified Communication',
-      description: 'Manage chat, email, and automation in one central platform - no more switching between tools.',
+      description: 'All your customer interactions, chat, email, automation, in one intelligent view. No silos, no switching, just clarity.',
       icon: '/images/icons/message-1.jpg'
     },
     {
       id: 'smart-automation',
       title: 'Smart Automation',
-      description: 'Automate repetitive workflows and let Cuoral handle responses, routing and ticketing effortlessly.',
+      description: 'Let Cuoral handle the repetitive. Intelligent routing, human responses, zero lag in customer care.',
       icon: '/images/icons/setting.png'
     },
     {
       id: 'advance-analytics',
       title: 'Advance Analytics',
-      description: 'Track Performance, customer satisfaction, and engagement metrics with real-time insights.',
+      description: 'See what your dashboards miss. Real-time insights that help you act faster and grow smarter.',
       icon: '/images/icons/chart.png'
     }
   ];
@@ -129,19 +129,19 @@ export default function WhyChooseCuoralSection() {
     {
       id: 'ai-powered-support',
       title: 'AI-Powered Support',
-      description: 'Leverage intelligent bots that assist customers instantly and escalate only when needed.',
+      description: 'Instant, reliable assistance powered by AI that knows when to help and when to escalate.',
       icon: '/images/icons/support.png'
     },
     {
       id: 'proactive-engagement',
       title: 'Proactive Engagement',
-      description: 'Reach out before issues arise with real-time monitoring and proactive notifications.',
+      description: 'Detect friction early. Respond with context, not crisis. Stay ahead of every customer moment.',
       icon: '/images/icons/notification.png'
     },
     {
       id: 'customer-intelligence',
       title: 'Customer Intelligence',
-      description: 'Gain deeper understanding of customer behavior to create personalized experiences.',
+      description: 'Understand users beyond the data. Their behavior, emotions, and trust triggers.',
       icon: '/images/icons/brain.png'
     }
   ];
@@ -176,8 +176,10 @@ export default function WhyChooseCuoralSection() {
               variants={headerItemVariants}
               className="text-lg text-[#232937] max-w-3xl mx-auto"
             >
-              Designed for speed, built for scale - Cuoral helps your business<br />
-              grow through smarter customer relationships.
+            Growth begins with trust.
+            Cuoral unifies visibility, intelligence, and 
+            <br />
+              reliability across every customer moment.
             </motion.p>
           </motion.div>
         </div>

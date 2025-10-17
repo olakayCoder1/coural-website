@@ -89,7 +89,7 @@ export default function Footer() {
 
               {/* Description */}
               <p className="text-[#232937] mb-6 lg:mb-12 max-w-sm">
-                Your Ultimate platform for proactive customer experience, giving you intelligence, engagement and friction alerts in real-time.
+                Cuoral is where customer confidence meets intelligence, empowering businesses to detect, understand and resolve friction before trust breaks.
               </p>
 
               {/* Social Media Icons */}

@@ -140,7 +140,7 @@ export default function TestimonialsSection() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Cuoral powers customer success for startups, agencies, and enterprises around the world.
+          Real stories from teams using Cuoral to build reliability, strengthen trust and stay closer to their customers in every moment that matters.
         </motion.p>
 
         {/* Animated Testimonials Columns */}

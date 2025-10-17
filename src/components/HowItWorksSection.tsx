@@ -15,8 +15,8 @@ export default function HowItWorksSection() {
   const steps = [
     {
       step: "Step 1",
-      title: "Set Up Your Account",
-      description: "Create your Cuoral workspace, invite your team, and integrate your favorite tools – all in one place.",
+      title: "Create Your Workspace",
+      description: "Set up your Cuoral dashboard and connect your existing platforms & tools, from website to mobile app to CRM and start capturing the full customer journey in one streamlined view.",
       icon: "/images/icons/how-it-works/settings.png",
       // use background gradient
       bgColor: "bg-gradient-to-r from-blue-100/50 to-blue-200/50",
@@ -24,8 +24,8 @@ export default function HowItWorksSection() {
     },
     {
       step: "Step 2", 
-      title: "Engage Your Customers",
-      description: "Start real-time conversations via chat, email, or automation – keeping every customer interaction unified.",
+      title: "See What Your Users Experience",
+      description: "Replay user sessions, visualize friction in real time, and detect silent issues before they become visible complaints. Every click, delay and interaction becomes actionable insight.",
       icon: "/images/icons/how-it-works/message.png",
       // use background gradient
       bgColor: "bg-gradient-to-r from-red-100/50 to-red-200/50",
@@ -33,8 +33,8 @@ export default function HowItWorksSection() {
     },
     {
       step: "Step 3",
-      title: "Track & Optimize",
-      description: "Measure customer satisfaction, monitor performance, and improve engagement with intelligent insights.",
+      title: "Act, Learn and Iterate",
+      description: "Turn intelligence into growth. Resolve issues faster, automate recovery and measure the impact of every fix with data that strengthens trust and long-term retention.",
       icon: "/images/icons/how-it-works/stats.png",
       // use background gradient
       bgColor: "bg-gradient-to-r from-green-100/50 to-green-200/50",
@@ -56,9 +56,9 @@ export default function HowItWorksSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Focus on Growth,
+              Your Customer Intelligence 
               <br />
-              We&apos;ll Handle the Rest.
+              Journey
             </motion.h2>
 
             <motion.p
@@ -67,9 +67,8 @@ export default function HowItWorksSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Get started in minutes and connect
-              <br />
-              seamlessly with your customers.
+              From detection to resolution, Cuoral keeps every user interaction 
+              reliable, transparent and trusted
             </motion.p>
           </div>
         </div>

@@ -132,7 +132,7 @@ export default function IntegrationsSection(
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Integrate with tools of<br />your choice
+            Connect Everything. <br />Understand Everyone
           </motion.h2>
 
           {/* Description */}
@@ -142,8 +142,8 @@ export default function IntegrationsSection(
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            Cuoral helps businesses engage, support, and<br />
-            grow with a unified customer platform.
+            Integrate Cuoral with your platform and tools to bring<br />
+            every customer insight into one clear, connected view.
           </motion.p>
 
           {/* Explore Button */}

@@ -79,7 +79,7 @@ export default function FeaturesSection() {
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
               className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#0c2857] mb-6 leading-tight"
             >
-              Power your customer growth with{' '}
+              Power Your Customer Intelligence with{' '}
               <br />
               Cuoral
             </motion.h2>
@@ -88,8 +88,9 @@ export default function FeaturesSection() {
               variants={itemVariants}
               className="text-lg text-[#232937] max-w-2xl mx-auto leading-relaxed"
             >
-              Discover powerful tools that simplify customer communication,
-              automate workflows, and deliver real-time insights.
+              Your Trust Stack starts here, with real-time visibility, effortless intelligence, 
+              and experience customers can trust.
+
             </motion.p>
           </motion.div>
         </div>
@@ -104,62 +105,59 @@ export default function FeaturesSection() {
             animate={featuresControls}
             variants={containerVariants}
           >
-            {/* Real-time Engagement */}
+            {/* See Every Customer Moment */}
             <motion.div
               custom={0}
               variants={featureVariants}
               className="border-l-2 border-blue-400 pl-6"
             >
               <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                Real-time Engagement
+                See Every Customer Moment
               </h3>
               <p className="text-[#232937] mb-4 leading-relaxed text-sm max-w-sm">
-                Connect with your customers instantly and understand their
-                journey in real time.
+                Spot friction as it happens. Watch live sessions, act instantly and keep every interaction seamless.
               </p>
               <ul className="space-y-1 text-[#232937] text-sm">
                 <li className="flex items-center text-[#0c2857]">
                   <span className="text-[#0c2857] mr-2 font-medium">1.</span>
-                  Live Chat
+                  Live Session Replays
                 </li>
                 <li className="flex items-center text-[#0c2857]">
                   <span className="text-[#0c2857] mr-2 font-medium">2.</span>
-                  Live Visitors Feed
+                  Real-Time Journey Insights
                 </li>
                 <li className="flex items-center text-[#0c2857]">
                   <span className="text-gray-900 mr-2 font-medium">3.</span>
-                  Escalation Channel
+                  Smart Escalation Hub
                 </li>
               </ul>
             </motion.div>
 
-            {/* Intelligent Support & Automation */}
+            {/* Support That Thinks Ahead */}
             <motion.div
               custom={1}
               variants={featureVariants}
               className="border-l-2 border-gray-100 pl-6"
             >
               <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                Intelligent Support & Automation
+                Support That Thinks Ahead
               </h3>
               <p className="text-[#232937] leading-relaxed text-sm max-w-sm">
-                Automate repetitive tasks and provide smarter, faster support that
-                anticipates user needs.
+                Predict issues, automate fixes, and turn every response into renewed trust
               </p>
             </motion.div>
 
-            {/* Marketing & Growth Tools */}
+            {/* Turn Insight into Retention */}
             <motion.div
               custom={2}
               variants={featureVariants}
               className="border-l-2 border-gray-100 pl-6"
             >
               <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
-                Marketing & Growth Tools
+                Turn Insight into Retention
               </h3>
               <p className="text-[#232937] leading-relaxed text-sm max-w-sm">
-                Effortlessly onboard, engage, and retain customers with targeted
-                communication and smart lead management.
+                Understand what drives loyalty and use data to build lasting customer confidence.
               </p>
             </motion.div>
           </motion.div>
