@@ -62,7 +62,7 @@ export default function FeaturesSection() {
   }
 
   return (
-    <section className="py-24 px-6 lg:px-8 bg-white mt-12 lg:mt-32">
+    <section className="py-24 px-6 lg:px-8 bg-white pt-12 lg:pt-32">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
         <div ref={headerRef} className="text-center mb-6">
