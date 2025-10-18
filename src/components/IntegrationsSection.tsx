@@ -121,7 +121,7 @@ export default function IntegrationsSection(
       </div>
 
       <div className="relative z-10">  {/* New wrapper: relative + z-index */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className=" mx-auto text-center">
           {/* Badge */}
           <BadgeWithImage text="Integrations" />
 

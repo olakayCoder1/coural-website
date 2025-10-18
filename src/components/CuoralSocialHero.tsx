@@ -3,7 +3,7 @@
 import { Slack, Facebook } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
-import type { RepeatType } from "framer-motion"
+
 
 export default function CuoralHero() {
   const icons = [
@@ -50,7 +50,7 @@ export default function CuoralHero() {
             {tripleIcons.map((icon, index) => (
               <div
                 key={`icon-${index}`}
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg"
+                className="flex gap-12 h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg"
               >
                 <icon.Icon
                   className={
