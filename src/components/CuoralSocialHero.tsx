@@ -55,10 +55,10 @@ export default function CuoralHero() {
                 <icon.Icon
                   className={
                     icon.type === "slack"
-                      ? "h-6 w-6 text-[#E01E5A]"
+                      ? "h-10 w-10 text-[#E01E5A]"
                       : icon.type === "whatsapp"
-                        ? "h-6 w-6 text-[#25D366]"
-                        : "h-6 w-6 text-[#1877F2]"
+                        ? "h-10 w-10 text-[#25D366]"
+                        : "h-10 w-10 text-[#1877F2]"
                   }
                 />
               </div>
