@@ -62,10 +62,10 @@ export default function FeaturesSection() {
   }
 
   return (
-    <section className="py-24 px-6 lg:px-8 bg-white">
+    <section className="py-24 px-6 lg:px-8 bg-white mt-12 lg:mt-32">
       <div className="max-w-7xl mx-auto px-4">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-20">
+        <div ref={headerRef} className="text-center mb-6">
           <motion.div
             initial="hidden"
             animate={headerControls}
@@ -79,7 +79,7 @@ export default function FeaturesSection() {
             
             <motion.h2
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-              className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#0c2857] mb-6 leading-tight"
+              className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#0c2857] mb-2 leading-tight"
             >
               Power Your Customer Intelligence with{' '}
               <br />

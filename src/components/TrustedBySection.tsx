@@ -47,7 +47,7 @@ export default function TrustedBySection() {
           viewport={{ once: true }}
           className="text-[#232937] text-lg font-semibold mb-16 tracking-wide"
         >
-          Partner with 
+          In partnership with 
         </motion.p>
         
         <motion.div
