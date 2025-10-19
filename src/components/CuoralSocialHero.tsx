@@ -1,25 +1,23 @@
 "use client"
 
-import { Slack, Facebook } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
 
 
 export default function CuoralHero() {
   const icons = [
-    { type: "slack", Icon: Slack },
-    { type: "facebook", Icon: Facebook },
-    { type: "whatsapp", Icon: Facebook },
-    { type: "facebook", Icon: Facebook },
-    { type: "facebook", Icon: Facebook },
-    { type: "whatsapp", Icon: Facebook },
-    { type: "facebook", Icon: Facebook },
-    { type: "whatsapp", Icon: Facebook },
-    { type: "whatsapp", Icon: Facebook },
-    { type: "slack", Icon: Slack },
-    { type: "facebook", Icon: Facebook },
-    { type: "whatsapp", Icon: Facebook },
-    { type: "facebook", Icon: Facebook },
+    { type: "slack", src: "/images/integrations/slack.png", alt: "Slack" },
+    { type: "jira", src: "/images/integrations/jira.png", alt: "Jira" },
+    { type: "github", src: "/images/integrations/github.png", alt: "GitHub" },
+    { type: "paypal", src: "/images/integrations/PayPal.png", alt: "PayPal" },
+    { type: "atlassian", src: "/images/integrations/atlassian.png", alt: "Atlassian" },
+    { type: "confluence", src: "/images/integrations/confluence.png", alt: "Confluence" },
+    { type: "dropbox", src: "/images/integrations/dropbox.png", alt: "Dropbox" },
+    { type: "google", src: "/images/integrations/google.png", alt: "Google" },
+    { type: "chatgpt", src: "/images/integrations/chatgpt.png", alt: "ChatGPT" },
+    { type: "skype", src: "/images/integrations/skype.png", alt: "Skype" },
+    { type: "freemarket", src: "/images/integrations/Freemarket.png", alt: "Freemarket" },
+    { type: "talos", src: "/images/integrations/Talos logo.png", alt: "Talos" },
   ]
 
   const tripleIcons = [...icons, ...icons, ...icons, ...icons, ...icons]
@@ -41,7 +39,7 @@ export default function CuoralHero() {
       <div className="relative flex items-center w-full">
         <div className="relative flex items-center gap-6 overflow-hidden min-h-[12rem] w-full">
           <motion.div
-            className="flex items-center gap-6 whitespace-nowrap"
+            className="flex items-center gap-12 whitespace-nowrap"
             // @ts-expect-error
             variants={scrollVariants}
             animate="animate"
@@ -50,16 +48,14 @@ export default function CuoralHero() {
             {tripleIcons.map((icon, index) => (
               <div
                 key={`icon-${index}`}
-                className="flex gap-12 h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg"
+                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg p-2"
               >
-                <icon.Icon
-                  className={
-                    icon.type === "slack"
-                      ? "h-10 w-10 text-[#E01E5A]"
-                      : icon.type === "whatsapp"
-                        ? "h-10 w-10 text-[#25D366]"
-                        : "h-10 w-10 text-[#1877F2]"
-                  }
+                <Image
+                  src={icon.src}
+                  alt={icon.alt}
+                  width={32}
+                  height={32}
+                  className="h-8 w-8 object-contain"
                 />
               </div>
             ))}
