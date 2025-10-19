@@ -3,16 +3,40 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
+const companyLogos = [
+  { src: '/images/company/Circle.png', alt: 'Circle' },
+  { src: '/images/company/Freemarket.png', alt: 'Freemarket' },
+  { src: '/images/company/PayPal.png', alt: 'PayPal' },
+  { src: '/images/company/Talos.png', alt: 'Talos' },
+  { src: '/images/company/deel.png', alt: 'Deel' },
+  { src: '/images/company/paxos.png', alt: 'Paxos' },
+  { src: '/images/company/worlplay.png', alt: 'Worldplay' },
+]
+
 export default function TrustedBySection() {
   return (
     <motion.section 
-      className=" py-20 bg-white"
+      className="py-20 bg-white overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
       viewport={{ once: true }}
     >
-      <div className=" mx-auto text-center">
+      <style jsx>{`
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .scroll-animation {
+          animation: scroll 20s linear infinite;
+        }
+      `}</style>
+      
+      <div className="mx-auto text-center">
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -24,22 +48,42 @@ export default function TrustedBySection() {
         </motion.p>
         
         <motion.div
-          className="flex justify-center items-center opacity-60 hover:opacity-80 transition-opacity duration-300"
+          className="relative w-full"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Image
-            src="/images/business-logos.svg"
-            alt="Trusted Companies"
-            width={800}
-            height={120}
-            className="w-full h-auto mx-12"
-          />
+          <div className="flex scroll-animation">
+            {/* First set of logos */}
+            {companyLogos.map((logo, index) => (
+              <div key={`first-${index}`} className="flex-shrink-0 mx-8">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {companyLogos.map((logo, index) => (
+              <div key={`second-${index}`} className="flex-shrink-0 mx-8">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
-      <div className=" mx-auto text-center mt-12">
+      
+      <div className="mx-auto text-center mt-12">
         <motion.p
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -51,19 +95,38 @@ export default function TrustedBySection() {
         </motion.p>
         
         <motion.div
-          className="flex justify-center items-center opacity-60 hover:opacity-80 transition-opacity duration-300"
+          className="relative w-full"
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 0.6, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <Image
-            src="/images/business-logos.svg"
-            alt="Trusted Companies"
-            width={800}
-            height={120}
-            className="w-full h-auto mx-12"
-          />
+          <div className="flex scroll-animation">
+            {/* First set of logos */}
+            {companyLogos.map((logo, index) => (
+              <div key={`partnership-first-${index}`} className="flex-shrink-0 mx-8">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicate set for seamless loop */}
+            {companyLogos.map((logo, index) => (
+              <div key={`partnership-second-${index}`} className="flex-shrink-0 mx-8">
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={120}
+                  height={60}
+                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                />
+              </div>
+            ))}
+          </div>
         </motion.div>
       </div>
     </motion.section>
