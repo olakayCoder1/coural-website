@@ -6,6 +6,7 @@ interface ButtonProps {
   children: string;
   onClick?: () => void;
   variant?: 'primary' | 'secondary';
+  className?: string;
 }
 
 const primaryBackgroundVariant: Variants = {
@@ -145,7 +146,7 @@ const secondarySecondTextVariant: Variants = {
   },
 };
 
-export const Button = ({ children, onClick, variant = 'primary' }: ButtonProps) => {
+export const Button = ({ children, onClick, variant = 'primary', className = '' }: ButtonProps) => {
   const backgroundVariant = variant === 'primary' ? primaryBackgroundVariant : secondaryBackgroundVariant;
   const firstTextVariant = variant === 'primary' ? primaryFirstTextVariant : secondaryFirstTextVariant;
   const secondTextVariant = variant === 'primary' ? primarySecondTextVariant : secondarySecondTextVariant;
@@ -156,7 +157,7 @@ export const Button = ({ children, onClick, variant = 'primary' }: ButtonProps) 
       whileHover="hover"
       animate="animate"
       variants={backgroundVariant}
-      className={`py-4 px-8 font-semibold cursor-pointer rounded-full ${variant === 'secondary' ? 'border border-gray-200' : ''}`}
+      className={`py-4 px-8 font-semibold cursor-pointer rounded-full ${variant === 'secondary' ? 'border border-gray-200' : ''} ${className}`}
       onClick={onClick}
     >
       <div className="overflow-hidden relative">
