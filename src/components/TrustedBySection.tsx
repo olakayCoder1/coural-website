@@ -13,6 +13,13 @@ const companyLogos = [
   { src: '/images/company/worlplay.png', alt: 'Worldplay' },
 ]
 
+// Only showing three selected logos for partnership
+const partnershipLogos = [
+  { src: '/images/company/PayPal.png', alt: 'PayPal' },
+  { src: '/images/company/deel.png', alt: 'Deel' },
+  { src: '/images/company/paxos.png', alt: 'Paxos' },
+]
+
 export default function TrustedBySection() {
   return (
     <motion.section 
@@ -63,7 +70,7 @@ export default function TrustedBySection() {
                   alt={logo.alt}
                   width={120}
                   height={60}
-                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  className="h-6 w-auto object-contain opacity-90 hover:opacity-100 transition-opacity duration-300"
                 />
               </div>
             ))}
@@ -75,7 +82,7 @@ export default function TrustedBySection() {
                   alt={logo.alt}
                   width={120}
                   height={60}
-                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
+                  className="h-6 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
                 />
               </div>
             ))}
@@ -89,44 +96,29 @@ export default function TrustedBySection() {
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-[#232937] text-lg font-semibold mb-16 tracking-wide"
+          className="text-[#232937] text-lg font-semibold mb-12 tracking-wide"
         >
-          In partnership with 
+          In partnership with
         </motion.p>
         
         <motion.div
-          className="relative w-full"
+          className="flex justify-center items-center gap-12"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          <div className="flex scroll-animation">
-            {/* First set of logos */}
-            {companyLogos.map((logo, index) => (
-              <div key={`partnership-first-${index}`} className="flex-shrink-0 mx-8">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120}
-                  height={60}
-                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-            {/* Duplicate set for seamless loop */}
-            {companyLogos.map((logo, index) => (
-              <div key={`partnership-second-${index}`} className="flex-shrink-0 mx-8">
-                <Image
-                  src={logo.src}
-                  alt={logo.alt}
-                  width={120}
-                  height={60}
-                  className="h-12 w-auto object-contain opacity-60 hover:opacity-80 transition-opacity duration-300"
-                />
-              </div>
-            ))}
-          </div>
+          {partnershipLogos.map((logo, index) => (
+            <div key={index} className="flex-shrink-0">
+              <Image
+                src={logo.src}
+                alt={logo.alt}
+                width={120}
+                height={60}
+                className="h-6 w-auto object-contain opacity-80 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          ))}
         </motion.div>
       </div>
     </motion.section>

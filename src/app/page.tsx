@@ -63,7 +63,7 @@ export default function Home() {
           onClick: () => console.log("Request a Demo clicked")
         }}
         dashboardImage={{
-          src: "/images/dashboard.svg",
+          src: "/images/dashboard-v1.svg",
           alt: "Curoal Dashboard Overview",
           width: 1200,
           height: 800

@@ -120,6 +120,17 @@ export default function HeroV2({
 
       {/* Decorative Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Bubble SVG Background */}
+        <div className="absolute inset-0 w-full h-full opacity-60">
+          <Image
+            src="/images/Bubble.svg.svg"
+            alt="Bubble background decoration"
+            fill
+            className="w-full h-full object-cover object-center"
+            style={{ mixBlendMode: 'overlay' }}
+          />
+        </div>
+        
         {/* Animated floating elements */}
         <motion.div
           className="absolute top-32 right-1/4 w-12 h-12 bg-white/40 rounded-full blur-sm shadow-lg"
