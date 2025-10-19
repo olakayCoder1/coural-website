@@ -43,15 +43,15 @@ export default function HowItWorksSection() {
   ]
 
   return (
-    <section ref={ref} className="py-24 px-6 lg:px-8 bg-white max-h-screen">
+    <section ref={ref} className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-left mb-20">
+        <div className="text-left mb-12 sm:mb-16 lg:mb-20">
           <BadgeWithImage text="How it Works" />
 
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-6 lg:gap-0">
             <motion.h2
-              className="text-4xl lg:text-5xl font-semibold text-gray-900 mb-6 leading-tight max-w-lg"
+              className="text-3xl sm:text-4xl lg:text-5xl font-semibold text-gray-900 mb-4 sm:mb-6 leading-tight max-w-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
@@ -62,7 +62,7 @@ export default function HowItWorksSection() {
             </motion.h2>
 
             <motion.p
-              className="text-lg  text-[#232937] max-w-sm mt-4"
+              className="text-base sm:text-lg text-[#232937] max-w-sm lg:mt-4"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -74,11 +74,11 @@ export default function HowItWorksSection() {
         </div>
 
         {/* Steps Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              className={`${step.bgColor} rounded-3xl p-8 text-left relative h-[450px] flex flex-col overflow-hidden`}
+              className={`${step.bgColor} rounded-2xl sm:rounded-3xl p-6 sm:p-8 text-left relative min-h-[400px] sm:h-[450px] flex flex-col overflow-hidden`}
               initial={{ 
                 opacity: 0,
                 scale: 0.8,
@@ -123,12 +123,12 @@ export default function HowItWorksSection() {
                   stiffness: 150
                 }}
               >
-                <BadgeWithImage text={step.step} className="inline-flex items-center px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-sm font-medium mb-16 shadow-sm w-fit" />
+                <BadgeWithImage text={step.step} className="inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-xs sm:text-sm font-medium mb-12 sm:mb-16 shadow-sm w-fit" />
               </motion.div>
 
               {/* Icon */}
               <motion.div 
-                className="flex justify-center mb-16"
+                className="flex justify-center mb-12 sm:mb-16"
                 initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
                 animate={{ 
                   opacity: isInView ? 1 : 0, 
@@ -143,14 +143,13 @@ export default function HowItWorksSection() {
                   damping: 12
                 }}
               >
-                <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center ">
-                  {/* <step.icon className={`w-10 h-10 ${step.iconColor}`} /> */}
+                <div className="w-16 sm:w-20 h-16 sm:h-20 bg-white rounded-full flex items-center justify-center">
                   <Image
                     src={step.icon}
                     alt={step.title}
                     width={24}
                     height={24}
-                    className='w-8 h-8'
+                    className='w-6 sm:w-8 h-6 sm:h-8'
                   />
                 </div>
               </motion.div>
@@ -171,10 +170,10 @@ export default function HowItWorksSection() {
                   stiffness: 100
                 }}
               >
-                <h3 className="text-xl font-semibold text-[#0c2857] mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0c2857] mb-3">
                   {step.title}
                 </h3>
-                <p className="text-[#232937] text-sm leading-relaxed">
+                <p className="text-[#232937] text-sm sm:text-base leading-relaxed">
                   {step.description}
                 </p>
               </motion.div>

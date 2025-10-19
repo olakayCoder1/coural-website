@@ -65,10 +65,10 @@ function StatItem({ stat, index, isInView }: { stat: { number: string; descripti
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
     >
-      <div className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-2">
+      <div className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#0c2857] mb-2 sm:mb-3">
         {animatedCount}{suffix}
       </div>
-      <div className="text-sm lg:text-base text-gray-600">
+      <div className="text-xs sm:text-sm lg:text-base text-gray-600 px-2">
         {stat.description}
       </div>
     </motion.div>
@@ -99,10 +99,10 @@ export default function StatsSection() {
   ];
 
   return (
-    <section ref={ref} className="py-16 bg-white ">
+    <section ref={ref} className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="grid grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}

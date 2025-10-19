@@ -150,10 +150,10 @@ export default function WhyChooseCuoralSection() {
   const allFeatures = [...leftColumnFeatures, ...rightColumnFeatures];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div ref={headerRef} className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-12 sm:mb-16 lg:mb-20">
           <motion.div
             initial="hidden"
             animate={headerControls}
@@ -166,7 +166,7 @@ export default function WhyChooseCuoralSection() {
             {/* Header */}
             <motion.h2
               variants={headerTitleVariants}
-              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#0c2857] mb-4 sm:mb-6 px-4 sm:px-0"
             >
               Why choose Cuoral
             </motion.h2>
@@ -174,11 +174,11 @@ export default function WhyChooseCuoralSection() {
             {/* Description */}
             <motion.p
               variants={headerItemVariants}
-              className="text-lg text-[#232937] max-w-3xl mx-auto"
+              className="text-base sm:text-lg text-[#232937] max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
             Growth begins with trust.
             Cuoral unifies visibility, intelligence, and 
-            <br />
+            <br className="hidden sm:block" />
               reliability across every customer moment.
             </motion.p>
           </motion.div>
@@ -189,7 +189,7 @@ export default function WhyChooseCuoralSection() {
           {/* Mobile/Tablet Grid Layout */}
           <motion.div
             ref={mobileFeaturesRef}
-            className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:hidden"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 lg:hidden"
             initial="hidden"
             animate={mobileFeaturesControls}
             variants={containerVariants}
@@ -197,23 +197,23 @@ export default function WhyChooseCuoralSection() {
             {allFeatures.map((feature) => (
               <motion.div
                 key={feature.id}
-                className="bg-white p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
+                className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                 variants={mobileFeatureVariants}
                 
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                   <Image
                     src={feature.icon}
                     alt={feature.title}
                     width={24}
                     height={24}
-                    className="w-6 h-6"
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                   />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-[#232937] leading-relaxed">
+                <p className="text-sm sm:text-base text-[#232937] leading-relaxed">
                   {feature.description}
                 </p>
               </motion.div>

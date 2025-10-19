@@ -67,10 +67,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-white border-t border-gray-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8">
           {/* Company Info */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 lg:col-span-2">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -83,12 +83,12 @@ export default function Footer() {
                 alt="Curoal"
                 width={120}
                 height={32}
-                className="h-6 w-auto"
+                className="h-5 sm:h-6 w-auto"
               />
               </div>
 
               {/* Description */}
-              <p className="text-[#232937] mb-6 lg:mb-12 max-w-sm">
+              <p className="text-sm sm:text-base text-[#232937] mb-6 lg:mb-12 max-w-sm leading-relaxed">
                 Cuoral is where customer confidence meets intelligence, empowering businesses to detect, understand and resolve friction before trust breaks.
               </p>
 
@@ -98,7 +98,7 @@ export default function Footer() {
                   <a
                     key={social.name}
                     href={social.href}
-                    className="w-10 h-10 rounded-lg flex items-center justify-center text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+                    className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                     aria-label={social.name}
                   >
                     {social.icon}
@@ -114,13 +114,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Product</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold text-[#0c2857] mb-3 sm:mb-4">Product</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {productLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+                    className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -135,13 +135,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Company</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold text-[#0c2857] mb-3 sm:mb-4">Company</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {companyLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+                    className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -156,13 +156,13 @@ export default function Footer() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-lg font-semibold text-[#0c2857] mb-4">Resources</h3>
-            <ul className="space-y-3">
+            <h3 className="text-base sm:text-lg font-semibold text-[#0c2857] mb-3 sm:mb-4">Resources</h3>
+            <ul className="space-y-2 sm:space-y-3">
               {resourceLinks.map((link) => (
                 <li key={link.name}>
                   <a
                     href={link.href}
-                    className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+                    className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
                   >
                     {link.name}
                   </a>
@@ -174,33 +174,33 @@ export default function Footer() {
 
         {/* Bottom Section */}
         <motion.div
-          className="border-t border-gray-200 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-gray-200 mt-8 sm:mt-10 lg:mt-12 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
           {/* Copyright */}
-          <p className="text-[#232937] mb-4 md:mb-0">
+          <p className="text-sm sm:text-base text-[#232937] text-center md:text-left">
             2025 Cuoral. All rights reserved
           </p>
 
           {/* Legal Links */}
-          <div className="flex space-x-6">
+          <div className="flex flex-wrap justify-center md:justify-end space-x-4 sm:space-x-6">
             <a
               href="#"
-              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+              className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <a
               href="#"
-              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+              className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Terms Of Service
             </a>
             <a
               href="#"
-              className="text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
+              className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Cookie Settings
             </a>

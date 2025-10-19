@@ -84,23 +84,23 @@ export default function BlogSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
-        <div ref={headerRef} className="text-center mb-16">
+        <div ref={headerRef} className="text-center mb-12 lg:mb-16">
           <motion.div
             initial="hidden"
             animate={headerControls}
             variants={containerVariants}
           >
-            <motion.div variants={headerItemVariants} className="mb-8">
+            <motion.div variants={headerItemVariants} className="mb-6 lg:mb-8">
               <BadgeWithImage text="Recent Blog" />
             </motion.div>
 
             {/* Header */}
             <motion.h2
               variants={headerTitleVariants}
-              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#0c2857] mb-4 lg:mb-6 leading-tight"
             >
               Recent Insights
             </motion.h2>
@@ -108,7 +108,7 @@ export default function BlogSection() {
             {/* Description */}
             <motion.p
               variants={headerItemVariants}
-              className="text-lg text-[#232937] leading-relaxed max-w-2xl mx-auto"
+              className="text-base sm:text-lg text-[#232937] leading-relaxed max-w-2xl mx-auto"
             >
               Explore fresh perspectives on Customer Intelligence, Trust Stack and Digital Experience. Ideas shaping how modern businesses connect and grow.
             </motion.p>
@@ -118,7 +118,7 @@ export default function BlogSection() {
         {/* Blog Posts Grid */}
         <motion.div
           ref={postsRef}
-          className="grid grid-cols-1 lg:grid-cols-2 gap-6"
+          className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6"
           initial="hidden"
           animate={postsControls}
           variants={containerVariants}
@@ -127,11 +127,11 @@ export default function BlogSection() {
           {blogPosts.slice(0, 2).map((post) => (
             <motion.article
               key={post.id}
-              className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
+              className="bg-white rounded-xl lg:rounded-2xl overflow-hidden transition-shadow duration-300 h-auto sm:h-[200px] flex flex-col sm:flex-row"
               variants={postVariants}
             >
               {/* Blog Post Image */}
-              <div className="relative w-[250px] h-full flex-shrink-0 overflow-hidden rounded-2xl">
+              <div className="relative w-full sm:w-[250px] h-48 sm:h-full flex-shrink-0 overflow-hidden rounded-xl lg:rounded-2xl">
                 <Image
                   src={post.image}
                   alt={post.title}
@@ -139,7 +139,7 @@ export default function BlogSection() {
                   className="object-cover hover:scale-105 transition-transform duration-300"
                 />
                 {/* Category Badge Overlay */}
-                <div className="absolute top-4 left-4">
+                <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                   <BadgeWithImage  
                   text={post.category}  
                   extendBaseClass={true} 
@@ -150,22 +150,22 @@ export default function BlogSection() {
               </div>
 
               {/* Blog Post Content */}
-              <div className="p-6 flex-1 flex flex-col justify-between">
+              <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
                 <div>
                   {/* Date and Author */}
-                  <div className="flex items-center text-sm text-gray-500 mb-3">
+                  <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">
                     <span>{post.date}</span>
                     <span className="mx-2">|</span>
                     <span>By {post.author}</span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                  <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 line-clamp-2 leading-snug">
                     {post.title}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-[#232937] text-sm line-clamp-2 mb-4">
+                  <p className="text-[#232937] text-sm line-clamp-2 mb-3 sm:mb-4">
                     {post.description}
                   </p>
                 </div>
@@ -183,11 +183,11 @@ export default function BlogSection() {
 
           {/* Bottom Row - Third Blog Post */}
           <motion.article
-            className="bg-white rounded-2xl overflow-hidden transition-shadow duration-300 h-[200px] flex"
+            className="bg-white rounded-xl lg:rounded-2xl overflow-hidden transition-shadow duration-300 h-auto sm:h-[200px] flex flex-col sm:flex-row"
             variants={postVariants}
           >
             {/* Blog Post Image */}
-            <div className="relative w-[250px]  h-full flex-shrink-0 overflow-hidden  rounded-2xl">
+            <div className="relative w-full sm:w-[250px] h-48 sm:h-full flex-shrink-0 overflow-hidden rounded-xl lg:rounded-2xl">
               <Image
                 src={blogPosts[2].image}
                 alt={blogPosts[2].title}
@@ -196,7 +196,7 @@ export default function BlogSection() {
               />
               {/* Category Badge Overlay */}
               
-              <div className="absolute top-4 left-4">
+              <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
                 <BadgeWithImage  
                 text={blogPosts[2].category}  
                 />
@@ -204,22 +204,22 @@ export default function BlogSection() {
             </div>
 
             {/* Blog Post Content */}
-            <div className="p-6 flex-1 flex flex-col justify-between">
+            <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between">
               <div>
                 {/* Date and Author */}
-                <div className="flex items-center text-sm text-gray-500 mb-3">
+                <div className="flex items-center text-xs sm:text-sm text-gray-500 mb-2 sm:mb-3">
                   <span>{blogPosts[2].date}</span>
                   <span className="mx-2">|</span>
                   <span>By {blogPosts[2].author}</span>
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
+                <h3 className="text-base sm:text-lg font-semibold text-gray-900 mb-2 line-clamp-2 leading-snug">
                   {blogPosts[2].title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#232937] text-sm line-clamp-2 mb-4">
+                <p className="text-[#232937] text-sm line-clamp-2 mb-3 sm:mb-4">
                   {blogPosts[2].description}
                 </p>
               </div>
@@ -237,7 +237,7 @@ export default function BlogSection() {
 
           {/* Bottom Right - Explore More Section */}
           <motion.div
-            className="bg-blue-50 rounded-2xl p-4 flex flex-col  h-[200px] space-y-4"
+            className="bg-blue-50 rounded-xl lg:rounded-2xl p-4 sm:p-4 flex flex-col h-auto sm:h-[200px] space-y-3 sm:space-y-4"
             variants={postVariants}
           >
             {/* Left side - Icon and Content */}
@@ -246,20 +246,20 @@ export default function BlogSection() {
               alt="Explore Blog"
               width={40}
               height={40}
-              className="w-12 h-12 rounded-lg flex items-center justify-center flex-shrink-0"
+              className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg flex items-center justify-center flex-shrink-0"
             />
-            <div className="flex items-center justify-between gap-4 flex-1">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 flex-1">
               {/* Blue Icon - Simple Square/Cube */}
               {/* Text Content */}
-              <div className=' max-w-2/4'>
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              <div className='flex-1'>
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                   Want to read more blogs?
                 </h3>
                 <p className="text-[#232937] text-sm leading-relaxed">
                   Our platform is crafted to deliver seamless functionality across every touchpoint.
                 </p>
               </div>
-              <div className="ml-6">
+              <div className="sm:ml-6 flex-shrink-0">
               <Button>Explore More</Button>
             </div>
             </div>

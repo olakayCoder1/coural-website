@@ -67,15 +67,15 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-12 sm:py-16 lg:py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-start">
           {/* Left Side - Header Content */}
           <div>
             {/* Badge */}
             <motion.div 
               ref={badgeRef}
-              className="mb-8"
+              className="mb-6 lg:mb-8"
               initial={{ opacity: 0, y: 30 }}
               animate={badgeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.6, ease: "easeOut" }}
@@ -86,7 +86,7 @@ export default function FAQSection() {
             {/* Header */}
             <motion.h2
               ref={headerRef}
-              className="text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#0c2857] mb-4 lg:mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
               animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
@@ -97,21 +97,21 @@ export default function FAQSection() {
             {/* Description */}
             <motion.p
               ref={descriptionRef}
-              className="text-lg text-[#232937] leading-relaxed"
+              className="text-base sm:text-lg text-[#232937] leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
               animate={descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             >
-              Got questions about how Cuoral works? We’ve got the answers. Simple, clear and built around your growth.
+              Got questions about how Cuoral works? We've got the answers. Simple, clear and built around your growth.
             </motion.p>
           </div>
 
           {/* Right Side - FAQ Items */}
-          <div ref={faqListRef} className="space-y-4">
+          <div ref={faqListRef} className="space-y-3 lg:space-y-4">
             {faqs.map((faq, index) => (
               <motion.div
                 key={faq.id}
-                className="bg-blue-50 rounded-2xl overflow-hidden"
+                className="bg-blue-50 rounded-xl lg:rounded-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
                 animate={faqListInView ? { 
                   opacity: 1, 
@@ -130,9 +130,9 @@ export default function FAQSection() {
               >
                 <button
                   onClick={() => toggleFAQ(faq.id)}
-                  className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-blue-100 transition-colors duration-200"
+                  className="w-full px-4 sm:px-6 py-4 lg:py-5 text-left flex items-center justify-between hover:bg-blue-100 transition-colors duration-200"
                 >
-                  <span className="text-lg font-medium text-[#0c2857] pr-4">
+                  <span className="text-base sm:text-lg font-medium text-[#0c2857] pr-3 sm:pr-4 leading-snug">
                     {faq.question}
                   </span>
                   <motion.div
@@ -141,7 +141,7 @@ export default function FAQSection() {
                     className="flex-shrink-0"
                   >
                     <svg
-                      className="w-6 h-6 text-gray-600"
+                      className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600"
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -165,8 +165,8 @@ export default function FAQSection() {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <div className="px-6 pb-5 pt-0">
-                        <p className="text-[#232937] leading-relaxed">
+                      <div className="px-4 sm:px-6 pb-4 lg:pb-5 pt-0">
+                        <p className="text-sm sm:text-base text-[#232937] leading-relaxed">
                           {faq.answer}
                         </p>
                       </div>

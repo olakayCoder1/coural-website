@@ -62,10 +62,10 @@ export default function FeaturesSection() {
   }
 
   return (
-    <section className="py-24 px-6 lg:px-8 bg-white mt-12 lg:mt-32">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-white mt-8 sm:mt-12 lg:mt-32">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
-        <div ref={headerRef} className="text-center mb-6">
+        <div ref={headerRef} className="text-center mb-8 sm:mb-12 lg:mb-16">
           <motion.div
             initial="hidden"
             animate={headerControls}
@@ -79,30 +79,29 @@ export default function FeaturesSection() {
             
             <motion.h2
               variants={{ hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0 } }}
-              className="text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#0c2857] mb-2 leading-tight"
+              className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-semibold text-[#0c2857] mb-4 sm:mb-6 leading-tight px-4 sm:px-0"
             >
               Power Your Customer Intelligence with{' '}
-              <br />
+              <br className="hidden sm:block" />
               Cuoral
             </motion.h2>
             
             <motion.p
               variants={itemVariants}
-              className="text-lg text-[#232937] max-w-2xl mx-auto leading-relaxed"
+              className="text-base sm:text-lg text-[#232937] max-w-2xl mx-auto leading-relaxed px-4 sm:px-0"
             >
               Your Trust Stack starts here, with real-time visibility, effortless intelligence, 
               and experience customers can trust.
-
             </motion.p>
           </motion.div>
         </div>
 
         {/* Main Content Grid */}
-        <div className="flex justify-between items-center ">
+        <div className="flex flex-col lg:flex-row lg:justify-between lg:items-start gap-8 lg:gap-12">
           {/* Left Content - Features */}
           <motion.div
             ref={featuresRef}
-            className="lg:col-span-3 space-y-8"
+            className="lg:flex-1 space-y-6 sm:space-y-8"
             initial="hidden"
             animate={featuresControls}
             variants={containerVariants}
@@ -111,22 +110,22 @@ export default function FeaturesSection() {
             <motion.div
               custom={0}
               variants={featureVariants}
-              className={`border-l-2 pl-6 ${expandedSection === 0 ? 'border-blue-400' : 'border-gray-100'}`}
+              className={`border-l-2 pl-4 sm:pl-6 ${expandedSection === 0 ? 'border-blue-400' : 'border-gray-100'}`}
             >
               <div 
                 className="cursor-pointer"
                 onClick={() => setExpandedSection(expandedSection === 0 ? -1 : 0)}
               >
-                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
                   See Every Customer Moment
                 </h3>
-                <p className="text-[#232937] mb-4 leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                <p className="text-[#232937] mb-4 leading-relaxed text-sm sm:text-base max-w-sm hover:text-gray-600 transition-colors">
                   Spot friction as it happens. Watch live sessions, act instantly and keep every interaction seamless.
                 </p>
               </div>
               {expandedSection === 0 && (
                 <motion.ul 
-                  className="space-y-1 text-[#232937] text-sm"
+                  className="space-y-2 text-[#232937] text-sm sm:text-base"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
@@ -152,22 +151,22 @@ export default function FeaturesSection() {
             <motion.div
               custom={1}
               variants={featureVariants}
-              className={`border-l-2 pl-6 ${expandedSection === 1 ? 'border-blue-400' : 'border-gray-100'}`}
+              className={`border-l-2 pl-4 sm:pl-6 ${expandedSection === 1 ? 'border-blue-400' : 'border-gray-100'}`}
             >
               <div 
                 className="cursor-pointer"
                 onClick={() => setExpandedSection(expandedSection === 1 ? -1 : 1)}
               >
-                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
                   Support That Thinks Ahead
                 </h3>
-                <p className="text-[#232937] leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                <p className="text-[#232937] leading-relaxed text-sm sm:text-base max-w-sm hover:text-gray-600 transition-colors">
                   Predict issues, automate fixes, and turn every response into renewed trust
                 </p>
               </div>
               {expandedSection === 1 && (
                 <motion.ul 
-                  className="space-y-1 text-[#232937] text-sm mt-4"
+                  className="space-y-2 text-[#232937] text-sm sm:text-base mt-4"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
@@ -193,22 +192,22 @@ export default function FeaturesSection() {
             <motion.div
               custom={2}
               variants={featureVariants}
-              className={`border-l-2 pl-6 ${expandedSection === 2 ? 'border-blue-400' : 'border-gray-100'}`}
+              className={`border-l-2 pl-4 sm:pl-6 ${expandedSection === 2 ? 'border-blue-400' : 'border-gray-100'}`}
             >
               <div 
                 className="cursor-pointer"
                 onClick={() => setExpandedSection(expandedSection === 2 ? -1 : 2)}
               >
-                <h3 className="text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
+                <h3 className="text-lg sm:text-xl font-semibold text-[#0c2857] mb-3 hover:text-blue-600 transition-colors">
                   Turn Insight into Retention
                 </h3>
-                <p className="text-[#232937] leading-relaxed text-sm max-w-sm hover:text-gray-600 transition-colors">
+                <p className="text-[#232937] leading-relaxed text-sm sm:text-base max-w-sm hover:text-gray-600 transition-colors">
                   Understand what drives loyalty and use data to build lasting customer confidence.
                 </p>
               </div>
               {expandedSection === 2 && (
                 <motion.ul 
-                  className="space-y-1 text-[#232937] text-sm mt-4"
+                  className="space-y-2 text-[#232937] text-sm sm:text-base mt-4"
                   initial={{ opacity: 0, height: 0 }}
                   animate={{ opacity: 1, height: 'auto' }}
                   exit={{ opacity: 0, height: 0 }}
@@ -234,7 +233,7 @@ export default function FeaturesSection() {
           {/* Right Content - Chat Interface */}
           <motion.div
             ref={chatRef}
-            className="p-8 px-12 flex justify-center bg-blue-50 rounded-2xl"
+            className="lg:flex-1 lg:max-w-md p-4 sm:p-6 lg:p-8 flex justify-center bg-blue-50 rounded-xl sm:rounded-2xl"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={chatControls}
           >
