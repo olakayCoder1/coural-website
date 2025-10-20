@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "./Button";
+import { LinkButton } from "./LinkButton";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
@@ -55,12 +56,13 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden sm:block">
-            <Button
+            <LinkButton
               className="text-sm lg:text-base px-4 lg:px-6"
-              onClick={() => window.open("https://app.cuoral.com/", "_blank")}
+              href="https://app.cuoral.com/"
+              target="_blank"
             >
               Get Started
-            </Button>
+            </LinkButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -125,14 +127,13 @@ export default function Header() {
                     transition={{ delay: navigationItems.length * 0.1 }}
                     className="px-6 pt-4 pb-2"
                   >
-                    <Button
+                    <LinkButton
                       className="w-full justify-center"
-                      onClick={() =>
-                        window.open("https://app.cuoral.com/", "_blank")
-                      }
+                      href="https://app.cuoral.com/"
+                      target="_blank"
                     >
                       Get Started
-                    </Button>
+                    </LinkButton>
                   </motion.div>
                 </nav>
               </div>

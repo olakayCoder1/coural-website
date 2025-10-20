@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import BadgeWithImage from "./BadgeWithImage";
 import { Button } from "./Button";
+import { LinkButton } from "./LinkButton";
 import CuoralSocialHero from "./CuoralSocialHero";
 import Image from "next/image";
 interface BackgroundLayer {
@@ -162,11 +163,12 @@ export default function IntegrationsSection({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Button
-              onClick={() => window.open("https://app.cuoral.com/", "_blank")}
+            <LinkButton
+              href="https://app.cuoral.com/"
+              target="_blank"
             >
               Explore
-            </Button>
+            </LinkButton>
           </motion.div>
           <CuoralSocialHero />
         </div>

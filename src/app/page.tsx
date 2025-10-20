@@ -54,11 +54,13 @@ export default function Home() {
         // subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
         primaryButton={{
           text: "Try for Free",
-          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
+          href: "https://app.cuoral.com/",
+          target: "_blank",
         }}
         secondaryButton={{
           text: "Request a Demo",
-          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
+          href: "https://app.cuoral.com/",
+          target: "_blank",
         }}
         dashboardImage={{
           src: "/images/dashboard-v1.svg",
@@ -166,15 +168,13 @@ export default function Home() {
         subtitle="Cuoral brings your tools, teams and touchpoints together, creating one intelligent flow where insight, action and trust move as one."
         primaryButton={{
           text: "Try for Free",
-          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
+          href: "https://app.cuoral.com/",
+          target: "_blank",
         }}
         secondaryButton={{
           text: "Book a Demo",
-          onClick: () =>
-            window.open(
-              "https://calendly.com/team-cuoral/cuoral-meeting",
-              "_blank"
-            ),
+          href: "https://calendly.com/team-cuoral/cuoral-meeting",
+          target: "_blank",
         }}
         showFloatingElements={true}
         className="pt-20"
