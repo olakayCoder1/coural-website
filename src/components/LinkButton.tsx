@@ -23,7 +23,7 @@ export function LinkButton({
   
   const variantClasses = {
     primary: "bg-[#4F7EFF] text-white hover:bg-[#3D6BFF] focus:ring-[#4F7EFF] shadow-lg hover:shadow-xl",
-    secondary: "bg-white text-[#232937] border-2 border-[#E5E7EB] hover:border-[#4F7EFF] hover:text-[#4F7EFF] focus:ring-[#4F7EFF] shadow-md hover:shadow-lg"
+    secondary: "bg-white text-[#232937] border-2 border-[#E5E7EB] hover:border-[#E5E7EB] hover:text-[#4F7EFF] focus:outline-none shadow-md hover:shadow-lg"
   };
 
   return (
