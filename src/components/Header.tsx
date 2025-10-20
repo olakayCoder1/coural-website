@@ -18,7 +18,7 @@ export default function Header() {
     { href: "#pricing", label: "Pricing", target: "_self" },
     { href: "https://coural.medium.com/", label: "Blog", target: "_blank" },
     {
-      href: "https://coural.medium.com/",
+      href: "https://docs.coural.com/",
       label: "Developer",
       target: "_blank",
     },
