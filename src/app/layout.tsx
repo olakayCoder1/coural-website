@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cuoral | AI-Powered Customer Experience Platform",
+    default: "Cuoral | Proactive customer success platform",
     template: "%s | Cuoral",
   },
   description:
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cuoral | AI-Powered Customer Experience Platform",
+    title: "Cuoral | Proactive customer success platform",
     description:
       "Cuoral helps businesses reduce churn and automate engagement through intelligent AI-driven customer experience tools.",
     creator: "@cuoralhq",
