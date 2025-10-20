@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import Image from 'next/image';
-import BadgeWithImage from './BadgeWithImage';
-import { Button } from './Button';
-import Header from './Header';
+import { motion } from "framer-motion";
+import Image from "next/image";
+import BadgeWithImage from "./BadgeWithImage";
+import { Button } from "./Button";
+import Header from "./Header";
 
 interface BackgroundLayer {
-  type: 'image' | 'gradient' | 'color';
+  type: "image" | "gradient" | "color";
   src?: string;
   alt?: string;
   gradient?: string;
@@ -56,60 +56,67 @@ export default function HeroV2({
   primaryButton,
   secondaryButton,
   dashboardImage,
-  className = ''
+  className = "",
 }: HeroV2Props) {
   return (
-    <section className={`relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}>
+    <section
+      className={`relative min-h-screen flex flex-col justify-center items-center px-4 sm:px-6 lg:px-8 overflow-hidden ${className}`}
+    >
       {/* Header Overlay */}
       <div className="absolute top-0 left-0 right-0 z-50 w-full">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Header />
         </div>
       </div>
-      
+
       {/* Background Images Layer */}
-      <div className="absolute inset-0 w-full h-full" >
+      <div className="absolute inset-0 w-full h-full">
         {/* Default gradient background */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
-            background: 'linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)'
+            background:
+              "linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)",
           }}
         />
-        
+
         {/* Custom background layers */}
         {backgroundLayers.map((layer, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full ${layer.className || ''}`}
+            className={`absolute inset-0 w-full h-full ${
+              layer.className || ""
+            }`}
             style={{
               ...layer.style,
               opacity: layer.opacity || 1,
-              mixBlendMode: (layer.blendMode as React.CSSProperties['mixBlendMode']) || 'normal'
+              mixBlendMode:
+                (layer.blendMode as React.CSSProperties["mixBlendMode"]) ||
+                "normal",
             }}
           >
-            {layer.type === 'image' && layer.src && (
+            {layer.type === "image" && layer.src && (
               <Image
                 src={layer.src}
                 alt={layer.alt || `Background layer ${index + 1}`}
                 fill
                 className="w-full h-full"
                 style={{
-                  objectFit: layer.style?.objectFit || 'cover',
-                  objectPosition: layer.style?.objectPosition || 'center',
-                  ...layer.style
+                  objectFit: layer.style?.objectFit || "cover",
+                  objectPosition: layer.style?.objectPosition || "center",
+                  ...layer.style,
                 }}
                 priority={index === 0}
               />
             )}
-            {layer.type === 'gradient' && (
-              <div 
+            {layer.type === "gradient" && (
+              <div
                 className="w-full h-full"
                 style={{ background: layer.gradient }}
               />
             )}
-            {layer.type === 'color' && (
-              <div 
+            {layer.type === "color" && (
+              <div
                 className="w-full h-full"
                 style={{ backgroundColor: layer.color }}
               />
@@ -127,10 +134,10 @@ export default function HeroV2({
             alt="Bubble background decoration"
             fill
             className="w-full h-full object-cover object-center"
-            style={{ mixBlendMode: 'overlay' }}
+            style={{ mixBlendMode: "overlay" }}
           />
         </div>
-        
+
         {/* Animated floating elements - hidden on mobile for performance */}
         <motion.div
           className="hidden sm:block absolute top-32 right-1/4 w-8 sm:w-12 h-8 sm:h-12 bg-white/40 rounded-full blur-sm shadow-lg"
@@ -175,10 +182,8 @@ export default function HeroV2({
         />
       </div>
 
-      
-
       {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 sm:pt-20 lg:pt-36" >
+      <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 sm:pt-20 lg:pt-36">
         <div className="text-center px-4 sm:px-0">
           {/* Badge */}
           {badge && (
@@ -190,7 +195,10 @@ export default function HeroV2({
             >
               <BadgeWithImage
                 text={badge.text}
-                className={badge.className || "inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-xs sm:text-sm font-medium shadow-sm"}
+                className={
+                  badge.className ||
+                  "inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-50 rounded-full text-gray-700 text-xs sm:text-sm font-medium shadow-sm"
+                }
               />
             </motion.div>
           )}
@@ -227,7 +235,10 @@ export default function HeroV2({
                   whileTap={{ scale: 0.98 }}
                   className="w-full sm:w-auto"
                 >
-                  <Button onClick={primaryButton.onClick} className="w-full sm:w-auto">
+                  <Button
+                    onClick={primaryButton.onClick}
+                    className="w-full sm:w-auto"
+                  >
                     {primaryButton.text}
                   </Button>
                 </motion.div>
@@ -238,7 +249,11 @@ export default function HeroV2({
                   whileTap={{ scale: 0.98 }}
                   className="w-full sm:w-auto"
                 >
-                  <Button onClick={secondaryButton.onClick} variant="secondary" className="w-full sm:w-auto">
+                  <Button
+                    onClick={secondaryButton.onClick}
+                    variant="secondary"
+                    className="w-full sm:w-auto"
+                  >
                     {secondaryButton.text}
                   </Button>
                 </motion.div>
@@ -268,7 +283,7 @@ export default function HeroV2({
                   {/* Subtle overlay for better mobile contrast */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/5 via-transparent to-transparent pointer-events-none sm:hidden" />
                 </div>
-                
+
                 {/* Enhanced visual effects for mobile */}
                 <div className="absolute -inset-1 bg-gradient-to-r from-blue-600/20 via-purple-600/20 to-blue-600/20 rounded-t-xl sm:rounded-t-2xl lg:rounded-t-3xl blur-sm opacity-30 sm:opacity-50 -z-10" />
               </div>

@@ -1,24 +1,28 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
-import Image from 'next/image'
-import { Button } from './Button'
-import { motion, AnimatePresence } from 'framer-motion'
+import { useState } from "react";
+import Image from "next/image";
+import { Button } from "./Button";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Header() {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const navigationItems = [
-    { href: "#", label: "Home" },
-    { href: "#", label: "Features" },
-    { href: "#", label: "Pricing" },
-    { href: "#", label: "Blog" },
-    { href: "#", label: "Developer" }
-  ]
+    { href: "#", label: "Home", target: "_self" },
+    { href: "#features", label: "Features", target: "_self" },
+    { href: "#pricing", label: "Pricing", target: "_self" },
+    { href: "https://coural.medium.com/", label: "Blog", target: "_blank" },
+    {
+      href: "https://coural.medium.com/",
+      label: "Developer",
+      target: "_blank",
+    },
+  ];
 
   return (
     <header className="relative z-50">
@@ -41,6 +45,7 @@ export default function Header() {
               <a
                 key={item.label}
                 href={item.href}
+                target={item.target}
                 className="text-[#232937] hover:text-[#0c2857] font-medium py-2 transition-colors"
               >
                 {item.label}
@@ -50,7 +55,9 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden sm:block">
-            <Button className="text-sm lg:text-base px-4 lg:px-6">Get Started</Button>
+            <Button className="text-sm lg:text-base px-4 lg:px-6">
+              Get Started
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -61,7 +68,9 @@ export default function Header() {
           >
             <div className="flex flex-col justify-center items-center w-5 h-5">
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMobileMenuOpen ? { rotate: 45, y: 6 } : { rotate: 0, y: 0 }
+                }
                 className="block w-5 h-0.5 bg-[#232937] transition-all duration-200"
               />
               <motion.span
@@ -69,7 +78,11 @@ export default function Header() {
                 className="block w-5 h-0.5 bg-[#232937] mt-1 transition-all duration-200"
               />
               <motion.span
-                animate={isMobileMenuOpen ? { rotate: -45, y: -6 } : { rotate: 0, y: 0 }}
+                animate={
+                  isMobileMenuOpen
+                    ? { rotate: -45, y: -6 }
+                    : { rotate: 0, y: 0 }
+                }
                 className="block w-5 h-0.5 bg-[#232937] mt-1 transition-all duration-200"
               />
             </div>
@@ -101,7 +114,7 @@ export default function Header() {
                       {item.label}
                     </motion.a>
                   ))}
-                  
+
                   {/* Mobile CTA Button */}
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -109,7 +122,9 @@ export default function Header() {
                     transition={{ delay: navigationItems.length * 0.1 }}
                     className="px-6 pt-4 pb-2"
                   >
-                    <Button className="w-full justify-center">Get Started</Button>
+                    <Button className="w-full justify-center">
+                      Get Started
+                    </Button>
                   </motion.div>
                 </nav>
               </div>
@@ -118,5 +133,5 @@ export default function Header() {
         </AnimatePresence>
       </div>
     </header>
-  )
+  );
 }

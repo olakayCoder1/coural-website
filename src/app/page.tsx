@@ -1,20 +1,18 @@
-'use client'
+"use client";
 
-
-import TrustedBySection from '@/components/TrustedBySection'
-import FeaturesSection from '@/components/FeaturesSection'
-import StatsSection from '@/components/StatsSection'
-import IntegrationsSection from '@/components/IntegrationsSection'
-import WhyChooseCuoralSection from '@/components/WhyChooseCuoralSection'
-import PricingSection from '@/components/PricingSection'
-import TestimonialsSection from '@/components/TestimonialsSection'
-import FAQSection from '@/components/FAQSection'
-import BlogSection from '@/components/BlogSection'
-import Footer from '@/components/Footer'
-import HowItWorksSection from '@/components/HowItWorksSection'
-import HeroV2 from '@/components/HeroV2'
-import HeroCTA from '@/components/HeroCTA'
-
+import TrustedBySection from "@/components/TrustedBySection";
+import FeaturesSection from "@/components/FeaturesSection";
+import StatsSection from "@/components/StatsSection";
+import IntegrationsSection from "@/components/IntegrationsSection";
+import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
+import PricingSection from "@/components/PricingSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
+import BlogSection from "@/components/BlogSection";
+import Footer from "@/components/Footer";
+import HowItWorksSection from "@/components/HowItWorksSection";
+import HeroV2 from "@/components/HeroV2";
+import HeroCTA from "@/components/HeroCTA";
 
 export default function Home() {
   return (
@@ -22,51 +20,51 @@ export default function Home() {
       <HeroV2
         backgroundLayers={[
           {
-            type: 'image',
-            src: '/images/Background.png',
-            alt: 'Main background',
-            className: 'z-0'
+            type: "image",
+            src: "/images/Background.png",
+            alt: "Main background",
+            className: "z-0",
           },
           {
-            type: 'image',
-            src: '/images/vector-left.png',
-            alt: 'Left vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-left.png",
+            alt: "Left vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'left center',
-              objectFit: 'contain'
-            }
+              objectPosition: "left center",
+              objectFit: "contain",
+            },
           },
           {
-            type: 'image',
-            src: '/images/vector-right.png',
-            alt: 'Right vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-right.png",
+            alt: "Right vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'right center',
-              objectFit: 'contain'
-            }
-          }
+              objectPosition: "right center",
+              objectFit: "contain",
+            },
+          },
         ]}
         badge={{
-          text: "Build Trust. Detect Friction. Grow Confidently"
+          text: "Build Trust. Detect Friction. Grow Confidently",
         }}
         title="Connect Better with<br />Your Customers"
-        subtitle="Connect Better with Your Customers - Turn every customer moment into <br />a trust-building experience powered by Cuoral Intelligence"
+        subtitle="Turn every customer moment into a trust-building experience powered by Cuoral Intelligence helping your team detect friction early, respond proactively, and create connections that last."
         // subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
         primaryButton={{
           text: "Try for Free",
-          onClick: () => console.log("Try for Free clicked")
+          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
         }}
         secondaryButton={{
           text: "Request a Demo",
-          onClick: () => console.log("Request a Demo clicked")
+          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
         }}
         dashboardImage={{
           src: "/images/dashboard-v1.svg",
           alt: "Curoal Dashboard Overview",
           width: 1200,
-          height: 800
+          height: 800,
         }}
         showFloatingElements={true}
         className=""
@@ -74,8 +72,6 @@ export default function Home() {
 
       {/* Trusted By Section */}
       <TrustedBySection />
-
-
 
       {/* How It Works Section */}
       <HowItWorksSection />
@@ -87,34 +83,34 @@ export default function Home() {
       <StatsSection />
 
       {/* Integrations Section */}
-      <IntegrationsSection 
+      <IntegrationsSection
         backgroundLayers={[
           {
-            type: 'image',
-            src: '/images/Background.png',
-            alt: 'Main background',
-            className: 'z-0'
+            type: "image",
+            src: "/images/Background.png",
+            alt: "Main background",
+            className: "z-0",
           },
           {
-            type: 'image',
-            src: '/images/vector-left.png',
-            alt: 'Left vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-left.png",
+            alt: "Left vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'left center',
-              objectFit: 'contain'
-            }
+              objectPosition: "left center",
+              objectFit: "contain",
+            },
           },
           {
-            type: 'image',
-            src: '/images/vector-right.png',
-            alt: 'Right vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-right.png",
+            alt: "Right vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'right center',
-              objectFit: 'contain'
-            }
-          }
+              objectPosition: "right center",
+              objectFit: "contain",
+            },
+          },
         ]}
       />
 
@@ -125,7 +121,7 @@ export default function Home() {
       <PricingSection />
 
       {/* Testimonials Section */}
-      <TestimonialsSection />
+      {/* <TestimonialsSection /> */}
 
       {/* FAQ Section */}
       <FAQSection />
@@ -137,44 +133,48 @@ export default function Home() {
       <HeroCTA
         backgroundLayers={[
           {
-            type: 'image',
-            src: '/images/Background.png',
-            alt: 'Main background',
-            className: 'z-0'
+            type: "image",
+            src: "/images/Background.png",
+            alt: "Main background",
+            className: "z-0",
           },
           {
-            type: 'image',
-            src: '/images/vector-left.png',
-            alt: 'Left vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-left.png",
+            alt: "Left vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'left center',
-              objectFit: 'contain'
-            }
+              objectPosition: "left center",
+              objectFit: "contain",
+            },
           },
           {
-            type: 'image',
-            src: '/images/vector-right.png',
-            alt: 'Right vector overlay',
-            className: 'z-10',
+            type: "image",
+            src: "/images/vector-right.png",
+            alt: "Right vector overlay",
+            className: "z-10",
             style: {
-              objectPosition: 'right center',
-              objectFit: 'contain'
-            }
-          }
+              objectPosition: "right center",
+              objectFit: "contain",
+            },
+          },
         ]}
         badge={{
-          text: "Integrations"
+          text: "Integrations",
         }}
         title="Connect Every System.<br /> Understand Every Signal"
         subtitle="Cuoral brings your tools, teams and touchpoints together, creating one intelligent flow where insight, action and trust move as one."
         primaryButton={{
           text: "Try for Free",
-          onClick: () => console.log("Try for Free clicked")
+          onClick: () => window.open("https://app.cuoral.com/", "_blank"),
         }}
         secondaryButton={{
           text: "Book a Demo",
-          onClick: () => console.log("Book a Demo clicked")
+          onClick: () =>
+            window.open(
+              "https://calendly.com/team-cuoral/cuoral-meeting",
+              "_blank"
+            ),
         }}
         showFloatingElements={true}
         className="pt-20"
@@ -182,7 +182,6 @@ export default function Home() {
 
       {/* Footer */}
       <Footer />
-
     </div>
-  )
+  );
 }
