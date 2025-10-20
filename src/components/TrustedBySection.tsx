@@ -26,7 +26,7 @@ const partnershipLogos = [
 export default function TrustedBySection() {
   return (
     <motion.section
-      className="py-10 sm:py-14 lg:py-20 bg-white overflow-hidden"
+      className="py-10 sm:py-14 lg:py-20 lg:pb-10 bg-white overflow-hidden"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 0.8 }}

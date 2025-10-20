@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Cuoral | Proactive customer success platform",
+    default: "Cuoral - Proactive Customer Success Platform",
     template: "%s | Cuoral",
   },
   description:
-    "Cuoral helps businesses shift from reactive support to proactive engagement. Reduce silent churn, automate issue resolution, and turn feedback into insights — all in one AI-powered customer experience platform.",
+    "Cuoral helps businesses shift from reactive support to proactive engagement. Reduce silent churn, automate issue resolution, and turn feedback into insights - all in one AI-powered customer experience platform.",
   keywords: [
     "Cuoral",
     "AI customer engagement",
@@ -29,6 +29,9 @@ export const metadata: Metadata = {
     "CX analytics",
     "customer feedback intelligence",
     "business growth automation",
+    "Customer experience platform",
+    "Customer Support platform for africa",
+    "Customer Support charging Naira",
   ],
   metadataBase: new URL("https://cuoral.com"),
   alternates: {
@@ -38,7 +41,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cuoral.com",
-    title: "Cuoral | Proactive customer success platform",
+    title: "Cuoral - Proactive Customer Success Platform",
     description:
       "Transform customer support into proactive engagement. Cuoral uses AI to detect silent churn, automate responses, and turn every conversation into growth insight.",
     siteName: "Cuoral",
@@ -53,10 +56,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Cuoral | Proactive customer success platform",
+    title: "Cuoral - Proactive Customer Success Platform",
     description:
       "Cuoral helps businesses reduce churn and automate engagement through intelligent AI-driven customer experience tools.",
-    creator: "@cuoralhq",
+    creator: "@cuoralofficial",
     images: ["https://cuoral.com/og-image.jpg"],
   },
   icons: {

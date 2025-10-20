@@ -1,26 +1,49 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { motion } from "framer-motion"
-
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function CuoralHero() {
   const icons = [
     { type: "slack", src: "/images/integrations/slack.png", alt: "Slack" },
     { type: "jira", src: "/images/integrations/jira.png", alt: "Jira" },
     { type: "github", src: "/images/integrations/github.png", alt: "GitHub" },
-    { type: "paypal", src: "/images/integrations/PayPal.png", alt: "PayPal" },
-    { type: "atlassian", src: "/images/integrations/atlassian.png", alt: "Atlassian" },
-    { type: "confluence", src: "/images/integrations/confluence.png", alt: "Confluence" },
-    { type: "dropbox", src: "/images/integrations/dropbox.png", alt: "Dropbox" },
+    { type: "gmail", src: "/images/integrations/gmail.png", alt: "Gmail" },
+    {
+      type: "teams",
+      src: "/images/integrations/teams.png",
+      alt: "Microsoft teams",
+    },
+    {
+      type: "whatsapp",
+      src: "/images/integrations/whatsapp.png",
+      alt: "Whatsapp",
+    },
+    {
+      type: "atlassian",
+      src: "/images/integrations/atlassian.png",
+      alt: "Atlassian",
+    },
+    {
+      type: "confluence",
+      src: "/images/integrations/confluence.png",
+      alt: "Confluence",
+    },
+    {
+      type: "dropbox",
+      src: "/images/integrations/dropbox.png",
+      alt: "Dropbox",
+    },
     { type: "google", src: "/images/integrations/google.png", alt: "Google" },
-    { type: "chatgpt", src: "/images/integrations/chatgpt.png", alt: "ChatGPT" },
+    {
+      type: "chatgpt",
+      src: "/images/integrations/chatgpt.png",
+      alt: "ChatGPT",
+    },
     { type: "skype", src: "/images/integrations/skype.png", alt: "Skype" },
-    { type: "freemarket", src: "/images/integrations/Freemarket.png", alt: "Freemarket" },
-    { type: "talos", src: "/images/integrations/Talos logo.png", alt: "Talos" },
-  ]
+  ];
 
-  const tripleIcons = [...icons, ...icons, ...icons, ...icons, ...icons]
+  const tripleIcons = [...icons, ...icons, ...icons, ...icons, ...icons];
 
   const scrollVariants = {
     animate: {
@@ -32,7 +55,7 @@ export default function CuoralHero() {
         repeatType: "loop", // ✅ Fix: Cast as RepeatType
       },
     },
-  }
+  };
 
   return (
     <div className="flex items-center justify-center px-4 py-8 w-full overflow-hidden">
@@ -48,14 +71,14 @@ export default function CuoralHero() {
             {tripleIcons.map((icon, index) => (
               <div
                 key={`icon-${index}`}
-                className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg p-2"
+                className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-white shadow-lg p-2"
               >
                 <Image
                   src={icon.src}
                   alt={icon.alt}
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain"
+                  width={45}
+                  height={45}
+                  className="h-10 w-10 object-contain"
                 />
               </div>
             ))}
@@ -75,5 +98,5 @@ export default function CuoralHero() {
         </div>
       </div>
     </div>
-  )
+  );
 }

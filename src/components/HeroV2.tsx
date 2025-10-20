@@ -200,7 +200,7 @@ export default function HeroV2({
                 text={badge.text}
                 className={
                   badge.className ||
-                  "inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-50 rounded-full text-gray-700 text-xs sm:text-sm font-medium shadow-sm"
+                  "inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-50 rounded-full text-gray-700 text-xs sm:text-sm font-medium shadow-md"
                 }
               />
             </motion.div>

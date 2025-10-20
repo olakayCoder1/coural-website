@@ -117,21 +117,21 @@ export default function WhyChooseCuoralSection() {
       title: "Unified Communication",
       description:
         "All your customer interactions, chat, email, automation, in one intelligent view. No silos, no switching, just clarity.",
-      icon: "/images/icons/message-1.jpg",
+      icon: "/images/why/customer-support.png",
     },
     {
       id: "smart-automation",
       title: "Smart Automation",
       description:
         "Let Cuoral handle the repetitive. Intelligent routing, human responses, zero lag in customer care.",
-      icon: "/images/icons/setting.png",
+      icon: "/images/why/brain.gif",
     },
     {
       id: "advance-analytics",
       title: "Advance Analytics",
       description:
         "See what your dashboards miss. Real-time insights that help you act faster and grow smarter.",
-      icon: "/images/icons/chart.png",
+      icon: "/images/why/analytics.gif",
     },
   ];
 
@@ -141,21 +141,21 @@ export default function WhyChooseCuoralSection() {
       title: "AI-Powered Support",
       description:
         "Instant, reliable assistance powered by AI that knows when to help and when to escalate.",
-      icon: "/images/icons/support.png",
+      icon: "/images/why/helpdesk.png",
     },
     {
       id: "proactive-engagement",
       title: "Proactive Engagement",
       description:
         "Detect friction early. Respond with context, not crisis. Stay ahead of every customer moment.",
-      icon: "/images/icons/notification.png",
+      icon: "/images/why/engagement.png",
     },
     {
       id: "customer-intelligence",
       title: "Customer Intelligence",
       description:
         "Understand users beyond the data. Their behavior, emotions, and trust triggers.",
-      icon: "/images/icons/brain.png",
+      icon: "/images/why/artificial-intelligence.gif",
     },
   ];
 
@@ -213,13 +213,13 @@ export default function WhyChooseCuoralSection() {
                 className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                 variants={mobileFeatureVariants}
               >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                   <Image
                     src={feature.icon}
-                    alt={feature.title}
-                    width={24}
-                    height={24}
-                    className="w-5 h-5 sm:w-6 sm:h-6"
+                    alt={feature.title + " source Flaticons"}
+                    width={30}
+                    height={30}
+                    className="w-6 h-6 sm:w-8 sm:h-8"
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
@@ -302,7 +302,7 @@ export default function WhyChooseCuoralSection() {
                       className="w-7 h-7"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
+                  <h3 className="text-lg font-bold text-shadow-sm text-[#0c2857] mb-3 leading-tight ml-2">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed ml-2">

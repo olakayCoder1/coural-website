@@ -47,7 +47,7 @@ export default function Home() {
           },
         ]}
         badge={{
-          text: "Build Trust. Detect Friction. Grow Confidently",
+          text: "Build Trust - Detect Friction - Grow Confidently",
         }}
         title="Connect Better with<br />Your Customers"
         subtitle="Turn every customer moment into a trust-building experience powered by Cuoral Intelligence helping your team detect friction early, respond proactively, and create connections that last."

@@ -1,65 +1,76 @@
-'use client';
+"use client";
 
-import { motion, AnimatePresence, useInView } from 'framer-motion';
-import { useState, useRef } from 'react';
-import BadgeWithImage from './BadgeWithImage';
+import { motion, AnimatePresence, useInView } from "framer-motion";
+import { useState, useRef } from "react";
+import BadgeWithImage from "./BadgeWithImage";
 
 export default function FAQSection() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null);
-  
+
   // Viewport detection refs
   const badgeRef = useRef(null);
   const headerRef = useRef(null);
   const descriptionRef = useRef(null);
   const faqListRef = useRef(null);
-  
+
   // Viewport detection hooks
   const badgeInView = useInView(badgeRef, { once: true, margin: "-100px" });
   const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
-  const descriptionInView = useInView(descriptionRef, { once: true, margin: "-100px" });
+  const descriptionInView = useInView(descriptionRef, {
+    once: true,
+    margin: "-100px",
+  });
   const faqListInView = useInView(faqListRef, { once: true, margin: "-100px" });
 
   const faqs = [
     {
       id: 1,
       question: "What is Cuoral used for?",
-      answer: "Cuoral is an intelligent customer experience platform that helps businesses detect friction, understand customer behavior, and unify every interaction across channels. It’s built to make support, engagement, and trust measurable in real time."
+      answer:
+        "Cuoral is an intelligent customer experience platform that helps businesses detect friction, understand customer behavior, and unify every interaction across channels. It’s built to make support, engagement, and trust measurable in real time.",
     },
     {
       id: 2,
       question: "Is Cuoral suitable for startups?",
-      answer: "Absolutely. Cuoral is perfect for startups laying the foundation for proactive customer engagement. It scales effortlessly as your user base grows, giving you enterprise-grade visibility without enterprise complexity"
+      answer:
+        "Absolutely. Cuoral is perfect for startups laying the foundation for proactive customer engagement. It scales effortlessly as your user base grows, giving you enterprise-grade visibility without enterprise complexity",
     },
     {
       id: 3,
       question: "Does Cuoral support multiple agents?",
-      answer: "Yes. Cuoral supports unlimited agents and teams. Assign conversations, collaborate seamlessly, and manage performance from one unified workspace designed for transparency and speed."
+      answer:
+        "Yes. Cuoral supports unlimited agents and teams. Assign conversations, collaborate seamlessly, and manage performance from one unified workspace designed for transparency and speed.",
     },
     {
       id: 4,
       question: "Can I integrate Cuoral with my CRM or website?",
-      answer: "Cuoral offers extensive integration capabilities with popular CRMs, websites, and business tools. Our API and pre-buDefinitely. Cuoral connects easily with popular CRMs, websites, and internal tools. Our APIs and pre-built integrations make setup simple, ensuring your workflows stay connected and insights stay unified. integrations make it easy to connect with your existing workflow and systems."
+      answer:
+        "Cuoral offers extensive integration capabilities with popular CRMs, websites, and business tools.Our APIs and pre-built integrations make setup simple, ensuring your workflows stay connected and insights stay unified. integrations make it easy to connect with your existing workflow and systems.",
     },
     {
       id: 5,
       question: "Is there free trial?",
-      answer: "Yes, we offer a free trial so you can explore Cuoral firsthand. Experience the platform’s full capabilities before you commit with no credit card required."
+      answer:
+        "Yes, we offer a free trial so you can explore Cuoral firsthand. Experience the platform’s full capabilities before you commit with no credit card required.",
     },
     {
-      id:6,
-      question:"How secure is Cuoral?",
-      answer:"Cuoral is built with enterprise-grade security at its core. All data is encrypted in transit and at rest, with strict access controls and compliance with global data protection standards."
+      id: 6,
+      question: "How secure is Cuoral?",
+      answer:
+        "Cuoral is built with enterprise-grade security at its core. All data is encrypted in transit and at rest, with strict access controls and compliance with global data protection standards.",
     },
     {
-      id:7,
-      question:"Can I customize Cuoral for my business needs?",
-      answer:"Yes. Cuoral is fully configurable, from dashboards and workflows to notifications and reports. You can tailor every aspect to match your operations and customer experience goals."
+      id: 7,
+      question: "Can I customize Cuoral for my business needs?",
+      answer:
+        "Yes. Cuoral is fully configurable, from dashboards and workflows to notifications and reports. You can tailor every aspect to match your operations and customer experience goals.",
     },
     {
-      id:8,
-      question:"How does onboarding and support work?",
-      answer:"Getting started is seamless. Our team guides you through setup, integration, and adoption, ensuring your transition is smooth. With in-app chat and dedicated support, we’re with you every step as your customer operations evolve."
-    }
+      id: 8,
+      question: "How does onboarding and support work?",
+      answer:
+        "Getting started is seamless. Our team guides you through setup, integration, and adoption, ensuring your transition is smooth. With in-app chat and dedicated support, we’re with you every step as your customer operations evolve.",
+    },
   ];
 
   const toggleFAQ = (id: number) => {
@@ -73,11 +84,13 @@ export default function FAQSection() {
           {/* Left Side - Header Content */}
           <div>
             {/* Badge */}
-            <motion.div 
+            <motion.div
               ref={badgeRef}
               className="mb-6 lg:mb-8"
               initial={{ opacity: 0, y: 30 }}
-              animate={badgeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={
+                badgeInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
               <BadgeWithImage text="FAQ's" />
@@ -88,7 +101,9 @@ export default function FAQSection() {
               ref={headerRef}
               className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-[#0c2857] mb-4 lg:mb-6 leading-tight"
               initial={{ opacity: 0, y: 30 }}
-              animate={headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={
+                headerInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
               transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
             >
               Everything You Need to Know, All in One Place
@@ -99,10 +114,13 @@ export default function FAQSection() {
               ref={descriptionRef}
               className="text-base sm:text-lg text-[#232937] leading-relaxed"
               initial={{ opacity: 0, y: 30 }}
-              animate={descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+              animate={
+                descriptionInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }
+              }
               transition={{ duration: 0.7, delay: 0.4, ease: "easeOut" }}
             >
-              Got questions about how Cuoral works? We've got the answers. Simple, clear and built around your growth.
+              Got questions about how Cuoral works? We've got the answers.
+              Simple, clear and built around your growth.
             </motion.p>
           </div>
 
@@ -113,19 +131,23 @@ export default function FAQSection() {
                 key={faq.id}
                 className="bg-blue-50 rounded-xl lg:rounded-2xl overflow-hidden"
                 initial={{ opacity: 0, y: 40, scale: 0.95 }}
-                animate={faqListInView ? { 
-                  opacity: 1, 
-                  y: 0, 
-                  scale: 1 
-                } : { 
-                  opacity: 0, 
-                  y: 40, 
-                  scale: 0.95 
-                }}
-                transition={{ 
-                  duration: 0.6, 
+                animate={
+                  faqListInView
+                    ? {
+                        opacity: 1,
+                        y: 0,
+                        scale: 1,
+                      }
+                    : {
+                        opacity: 0,
+                        y: 40,
+                        scale: 0.95,
+                      }
+                }
+                transition={{
+                  duration: 0.6,
                   delay: faqListInView ? 0.6 + index * 0.1 : 0,
-                  ease: "easeOut"
+                  ease: "easeOut",
                 }}
               >
                 <button
@@ -155,7 +177,7 @@ export default function FAQSection() {
                     </svg>
                   </motion.div>
                 </button>
-                
+
                 <AnimatePresence>
                   {openFAQ === faq.id && (
                     <motion.div
