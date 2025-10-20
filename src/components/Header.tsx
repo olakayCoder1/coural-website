@@ -55,7 +55,10 @@ export default function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden sm:block">
-            <Button className="text-sm lg:text-base px-4 lg:px-6">
+            <Button
+              className="text-sm lg:text-base px-4 lg:px-6"
+              onClick={() => window.open("https://app.cuoral.com/", "_blank")}
+            >
               Get Started
             </Button>
           </div>
@@ -122,7 +125,12 @@ export default function Header() {
                     transition={{ delay: navigationItems.length * 0.1 }}
                     className="px-6 pt-4 pb-2"
                   >
-                    <Button className="w-full justify-center">
+                    <Button
+                      className="w-full justify-center"
+                      onClick={() =>
+                        window.open("https://app.cuoral.com/", "_blank")
+                      }
+                    >
                       Get Started
                     </Button>
                   </motion.div>
