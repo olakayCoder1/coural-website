@@ -32,7 +32,7 @@ export default function Header() {
           <div className="flex items-center">
             <Image
               src="/images/logo.svg"
-              alt="Curoal"
+              alt="cuoral"
               width={120}
               height={32}
               className="h-6 sm:h-8 w-auto"
