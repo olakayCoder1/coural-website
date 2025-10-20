@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cuoral.com",
-    title: "Cuoral | AI-Powered Customer Experience Platform",
+    title: "Cuoral | Proactive customer success platform",
     description:
       "Transform customer support into proactive engagement. Cuoral uses AI to detect silent churn, automate responses, and turn every conversation into growth insight.",
     siteName: "Cuoral",
