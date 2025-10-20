@@ -1,139 +1,145 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import BadgeWithImage from './BadgeWithImage';
-import { CircleCheck } from 'lucide-react';
+import { motion } from "framer-motion";
+import BadgeWithImage from "./BadgeWithImage";
+import { CircleCheck } from "lucide-react";
 
 export default function PricingSection() {
   const pricingPlans = [
     {
-      name: 'Basic Plan',
-      price: 300,
-      description: 'Perfect for small businesses or startups, our Starter plan gives you the essential tools.',
-      isPopular: false,
-      features: [
-        'Live Chat',
-        'Reporting & Analysis',
-        'Unlimited Integrations',
-        'Unlimited Integrations',
-        'Unlimited Integrations'
-      ]
-    },
-    {
-      name: 'Pro Plan',
-      price: 300,
-      description: 'Perfect for small businesses or startups, our Starter plan gives you the essential tools.',
+      name: "Core Subscription",
+      description:
+        "Access Cuoral’s essential tools for customer success, engagement, analytics, and workflow automation, everything you need to understand and support customers better.",
       isPopular: true,
       features: [
-        'Live Chat',
-        'Reporting & Analysis',
-        'Unlimited Integrations',
-        'Unlimited Integrations',
-        'Unlimited Integrations'
-      ]
+        "All core modules included",
+        "Unlimited team members",
+        "Customer timeline & analytics",
+        "In-app messaging & chat",
+        "Proactive support automation",
+      ],
+      buttonText: "Start Free Trial",
+      planLink: "https://app.cuoral.com",
     },
     {
-      name: 'Basic Plan',
-      price: 300,
-      description: 'Perfect for small businesses or startups, our Starter plan gives you the essential tools.',
+      name: "Pay-as-you-go",
+      description:
+        "Perfect for businesses that scale dynamically. Pay only for what you use. messages, emails, whatsapp, sms, or API calls. No lock-ins, no hidden fees.",
       isPopular: false,
       features: [
-        'Live Chat',
-        'Reporting & Analysis',
-        'Unlimited Integrations',
-        'Unlimited Integrations',
-        'Unlimited Integrations'
-      ]
-    }
+        "Flexible usage-based pricing",
+        "SMS & email messaging",
+        "Webhook and API access",
+        "Real-time billing dashboard",
+        "Instant top-ups & controls",
+      ],
+      buttonText: "Get Started",
+      planLink: "https://app.cuoral.com",
+    },
+    {
+      name: "Enterprise & Custom",
+      description:
+        "For larger organizations needing tailored deployment, advanced analytics, and dedicated support. Built to match your unique internal product workflows.",
+      isPopular: false,
+      features: [
+        "Custom onboarding & SLAs",
+        "Dedicated success manager",
+        "Private cloud or on-premise",
+        "Advanced integrations",
+        "Custom AI models & analytics",
+      ],
+      buttonText: "Request a Demo",
+      planLink: "https://calendly.com/team-cuoral/cuoral-meeting",
+    },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-white">
+    <section className="py-16 lg:py-24 bg-white" id="pricing">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Badge */}
-        <div className="text-center mb-6 sm:mb-8">
+        <div className="text-center mb-6">
           <BadgeWithImage text="Pricing" />
         </div>
 
         {/* Header */}
         <motion.h2
-          className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0c2857] text-center mb-4 sm:mb-6 px-2"
+          className="text-4xl lg:text-5xl font-bold text-[#0c2857] text-center mb-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
+          transition={{ duration: 0.6 }}
         >
-          Transparent pricing
+          Flexible plans built for growth
         </motion.h2>
 
-        {/* Description */}
+        {/* Subtext */}
         <motion.p
-          className="text-base sm:text-lg text-[#232937] text-center mb-8 sm:mb-12 lg:mb-16 max-w-3xl mx-auto px-2"
+          className="text-lg text-[#232937] text-center mb-12 max-w-2xl mx-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Choose a plan that&apos;s fits your business needs and budget. No hidden fees, no surprises - just straightforward pricing.
+          Whether you’re a growing startup or an enterprise, Cuoral scales with
+          you. Start with the essentials, pay as you go, or go fully custom.
         </motion.p>
 
         {/* Pricing Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={index}
-              className={`relative rounded-2xl p-6 sm:p-8 ${
-                plan.isPopular 
-                  ? 'bg-blue-50 ' 
-                  : 'bg-white border border-gray-200'
+              className={`relative flex flex-col justify-between rounded-2xl p-8 transition-all duration-300 ${
+                plan.isPopular
+                  ? "bg-blue-50 border border-blue-100 shadow-md hover:shadow-xl"
+                  : "bg-white border border-gray-200 hover:shadow-md"
               }`}
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
             >
-              {/* Plan Name and Badge */}
-              <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4'>
-                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-0">
-                  {plan.name} 
-                </h3>
-                {plan.isPopular && (
-                  <BadgeWithImage 
-                    text="Most Popular" 
-                    className="inline-flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-white border border-white rounded-full text-gray-700 text-xs sm:text-sm font-medium shadow-sm"
-                  />
-                )}
-              </div>
+              {/* Top Section */}
+              <div>
+                <div className="flex items-center justify-between mb-4">
+                  <h3 className="text-xl font-semibold text-gray-900">
+                    {plan.name}
+                  </h3>
+                  {plan.isPopular && (
+                    <span className="bg-blue-600 text-white text-xs px-3 py-1 rounded-full">
+                      Most Popular
+                    </span>
+                  )}
+                </div>
 
-              {/* Price */}
-              <div className="mb-4 sm:mb-6">
-                <span className="text-3xl sm:text-4xl font-bold text-gray-900">${plan.price}</span>
-                <span className="text-[#232937] ml-2 text-sm sm:text-base">/ month</span>
-              </div>
+                <p className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">
+                  {plan.description}
+                </p>
 
-              {/* Description */}
-              <p className="text-[#232937] mb-6 sm:mb-8 leading-relaxed text-sm sm:text-base">
-                {plan.description}
-              </p>
-
-              {/* Get Started Button */}
-              <button
-                className={`w-full py-3 px-6 rounded-full font-medium transition-colors duration-200 mb-6 sm:mb-8 cursor-pointer text-sm sm:text-base ${
-                  plan.isPopular
-                    ? 'bg-gray-800 hover:bg-gray-900 text-white'
-                    : 'bg-blue-500 hover:bg-blue-600 text-white'
-                }`}
-              >
-                Get Started
-              </button>
-
-              {/* Features */}
-              <div className="space-y-3 sm:space-y-4">
-                {plan.features.map((feature, featureIndex) => (
-                  <div key={featureIndex} className="flex items-center gap-3">
-                    <div className="w-4 h-4 sm:w-5 sm:h-5 rounded-full flex items-center justify-center flex-shrink-0">
-                      <CircleCheck className='text-green-500 w-4 h-4 sm:w-5 sm:h-5'/>
+                {/* Features */}
+                <div className="space-y-3 sm:space-y-4 mb-8">
+                  {plan.features.map((feature, featureIndex) => (
+                    <div
+                      key={featureIndex}
+                      className="flex items-center gap-3 text-sm text-gray-800"
+                    >
+                      <CircleCheck className="text-green-500 w-5 h-5 flex-shrink-0" />
+                      <span>{feature}</span>
                     </div>
-                    <span className="text-[#232937] text-sm sm:text-base">{feature}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Button — aligned across cards */}
+              <div className="mt-auto">
+                <a
+                  href={plan.planLink}
+                  target="_blank"
+                  className={`block text-center w-full py-3 px-6 rounded-full font-medium transition-colors duration-200 text-sm sm:text-base ${
+                    plan.isPopular
+                      ? "bg-gray-900 hover:bg-black text-white"
+                      : "bg-blue-500 hover:bg-blue-600 text-white"
+                  }`}
+                >
+                  {plan.buttonText}
+                </a>
               </div>
             </motion.div>
           ))}

@@ -1,12 +1,13 @@
-'use client';
+"use client";
 
-import { motion } from 'framer-motion';
-import BadgeWithImage from './BadgeWithImage';
-import { Button } from './Button';
-import CuoralSocialHero from './CuoralSocialHero';
-import Image from 'next/image';
+import { motion } from "framer-motion";
+import BadgeWithImage from "./BadgeWithImage";
+import { Button } from "./Button";
+import { LinkButton } from "./LinkButton";
+import CuoralSocialHero from "./CuoralSocialHero";
+import Image from "next/image";
 interface BackgroundLayer {
-  type: 'image' | 'gradient' | 'color';
+  type: "image" | "gradient" | "color";
   src?: string;
   alt?: string;
   gradient?: string;
@@ -16,57 +17,60 @@ interface BackgroundLayer {
   opacity?: number;
   blendMode?: string;
 }
-export default function IntegrationsSection(
-  {
-    backgroundLayers = [],
-  }: {
-    backgroundLayers?: BackgroundLayer[];
-  }
-) {
+export default function IntegrationsSection({
+  backgroundLayers = [],
+}: {
+  backgroundLayers?: BackgroundLayer[];
+}) {
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         {/* Default gradient background */}
-        <div 
+        <div
           className="absolute inset-0 w-full h-full"
           style={{
-            background: 'linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)'
+            background:
+              "linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)",
           }}
         />
-        
+
         {/* Custom background layers */}
         {backgroundLayers.map((layer, index) => (
           <div
             key={index}
-            className={`absolute inset-0 w-full h-full ${layer.className || ''}`}
+            className={`absolute inset-0 w-full h-full ${
+              layer.className || ""
+            }`}
             style={{
               ...layer.style,
               opacity: layer.opacity || 1,
-              mixBlendMode: (layer.blendMode as React.CSSProperties['mixBlendMode']) || 'normal'
+              mixBlendMode:
+                (layer.blendMode as React.CSSProperties["mixBlendMode"]) ||
+                "normal",
             }}
           >
-            {layer.type === 'image' && layer.src && (
+            {layer.type === "image" && layer.src && (
               <Image
                 src={layer.src}
                 alt={layer.alt || `Background layer ${index + 1}`}
                 fill
                 className="w-full h-full"
                 style={{
-                  objectFit: layer.style?.objectFit || 'cover',
-                  objectPosition: layer.style?.objectPosition || 'center',
-                  ...layer.style
+                  objectFit: layer.style?.objectFit || "cover",
+                  objectPosition: layer.style?.objectPosition || "center",
+                  ...layer.style,
                 }}
                 priority={index === 0}
               />
             )}
-            {layer.type === 'gradient' && (
-              <div 
+            {layer.type === "gradient" && (
+              <div
                 className="w-full h-full"
                 style={{ background: layer.gradient }}
               />
             )}
-            {layer.type === 'color' && (
-              <div 
+            {layer.type === "color" && (
+              <div
                 className="w-full h-full"
                 style={{ backgroundColor: layer.color }}
               />
@@ -74,7 +78,7 @@ export default function IntegrationsSection(
           </div>
         ))}
       </div>
-            {/* Decorative Elements - Hidden on mobile for performance */}
+      {/* Decorative Elements - Hidden on mobile for performance */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none hidden sm:block">
         {/* Animated floating elements */}
         <motion.div
@@ -120,8 +124,10 @@ export default function IntegrationsSection(
         />
       </div>
 
-      <div className="relative z-10">  {/* New wrapper: relative + z-index */}
-        <div className="max-w-7xl mx-auto text-center">
+      <div className="relative z-10">
+        {" "}
+        {/* New wrapper: relative + z-index */}
+        <div className="max-w-7xl mx-auto sm:pt-10 sm:pb-10 text-center">
           {/* Badge */}
           <BadgeWithImage text="Integrations" />
 
@@ -157,7 +163,12 @@ export default function IntegrationsSection(
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <Button>Explore</Button>
+            <LinkButton
+              href="https://app.cuoral.com/"
+              target="_blank"
+            >
+              Explore
+            </LinkButton>
           </motion.div>
           <CuoralSocialHero />
         </div>

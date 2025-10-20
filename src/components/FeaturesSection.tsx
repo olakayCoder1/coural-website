@@ -233,7 +233,7 @@ export default function FeaturesSection() {
           {/* Right Content - Chat Interface */}
           <motion.div
             ref={chatRef}
-            className="lg:flex-1 lg:max-w-md p-4 sm:p-6 lg:p-8 flex justify-center bg-blue-50 rounded-xl sm:rounded-2xl"
+            className="lg:flex-1 lg:max-w-md p-4 sm:p-6 lg:p-8 flex justify-center  rounded-xl sm:rounded-2xl"
             initial={{ opacity: 0, scale: 0.95 }}
             animate={chatControls}
           >

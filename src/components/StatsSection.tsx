@@ -81,20 +81,20 @@ export default function StatsSection() {
 
   const stats = [
     {
-      number: '2k+',
-      description: 'Trusted by users'
+      number: '20M+',
+      description: 'Messages analyzed'
     },
     {
       number: '95%',
-      description: 'Trusted by users'
+      description: 'Detection accuracy'
     },
     {
       number: '175+',
-      description: 'Trusted by users'
+      description: 'Businesses onboarded'
     },
     {
-      number: '200+',
-      description: 'Global Reach'
+      number: '6+',
+      description: 'Countries served'
     }
   ];
 

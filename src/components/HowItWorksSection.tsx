@@ -24,7 +24,7 @@ export default function HowItWorksSection() {
     },
     {
       step: "Step 2", 
-      title: "See What Your Users Experience",
+      title: "See What Your Users See",
       description: "Replay user sessions, visualize friction in real time, and detect silent issues before they become visible complaints. Every click, delay and interaction becomes actionable insight.",
       icon: "/images/icons/how-it-works/chat.png",
       // use background gradient
@@ -56,9 +56,9 @@ export default function HowItWorksSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              Your Customer Intelligence 
+             Where Insight Meets
               <br />
-              Journey
+              Connection
             </motion.h2>
 
             <motion.p
@@ -123,12 +123,12 @@ export default function HowItWorksSection() {
                   stiffness: 150
                 }}
               >
-                <BadgeWithImage text={step.step} className="inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-xs sm:text-sm font-medium mb-12 sm:mb-16 shadow-sm w-fit" />
+                <BadgeWithImage text={step.step} className="inline-flex items-center px-3 sm:px-4 py-2 bg-white border border-gray-100 rounded-full text-gray-700 text-xs sm:text-sm font-medium mb-8 sm:mb-12 shadow-md w-fit" />
               </motion.div>
 
               {/* Icon */}
               <motion.div 
-                className="flex justify-center mb-12 sm:mb-16"
+                className="flex justify-center mb-5 sm:mb-10"
                 initial={{ opacity: 0, scale: 0, rotateZ: -180 }}
                 animate={{ 
                   opacity: isInView ? 1 : 0, 
