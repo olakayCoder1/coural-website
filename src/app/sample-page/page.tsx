@@ -17,13 +17,14 @@ export default function SamplePage() {
         {/* Hero Section */}
         <section className="relative py-16 lg:py-24 overflow-hidden">
           {/* Background Gradient - only for hero section */}
-          <div 
+          <div
             className="absolute inset-0 w-full h-full"
             style={{
-              background: 'linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)'
+              background:
+                "linear-gradient(179deg, rgba(255, 255, 255, 1) 0%, rgba(129, 175, 249, 1) 96%, rgba(35, 76, 144, 1) 100%)",
             }}
           />
-          
+
           {/* Decorative Elements - only for hero section */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {/* Bubble SVG Background */}
@@ -81,17 +82,18 @@ export default function SamplePage() {
             />
           </div>
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-             <motion.div
-               initial={{ opacity: 0, y: 20 }}
-               animate={{ opacity: 1, y: 0 }}
-               transition={{ duration: 0.6 }}
-               className="text-center"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="text-center"
             >
               <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0c2857] mb-6">
                 Sample Page
               </h1>
               <p className="text-lg sm:text-xl text-[#64748b] max-w-2xl mx-auto">
-                This is a sample page template that can be cloned and customized for other pages like Privacy Policy, Terms and Conditions, etc.
+                This is a sample page template that can be cloned and customized
+                for other pages like Privacy Policy, Terms and Conditions, etc.
               </p>
             </motion.div>
           </div>
@@ -112,10 +114,15 @@ export default function SamplePage() {
                   Introduction
                 </h2>
                 <p className="text-[#64748b] leading-relaxed mb-6">
-                  Welcome to our sample page. This template provides a clean, professional layout that can be easily customized for various types of content pages. The design follows modern web standards and maintains consistency with your main website.
+                  Welcome to our sample page. This template provides a clean,
+                  professional layout that can be easily customized for various
+                  types of content pages. The design follows modern web
+                  standards and maintains consistency with your main website.
                 </p>
                 <p className="text-[#64748b] leading-relaxed">
-                  You can replace this content with your specific page content such as privacy policies, terms and conditions, about us information, or any other static content you need.
+                  You can replace this content with your specific page content
+                  such as privacy policies, terms and conditions, about us
+                  information, or any other static content you need.
                 </p>
               </div>
 
@@ -125,7 +132,8 @@ export default function SamplePage() {
                   Section 1: Sample Content
                 </h2>
                 <p className="text-[#64748b] leading-relaxed mb-4">
-                  This is where you would add your main content. The typography and spacing are optimized for readability and user experience.
+                  This is where you would add your main content. The typography
+                  and spacing are optimized for readability and user experience.
                 </p>
                 <ul className="list-disc list-inside text-[#64748b] space-y-2 mb-6">
                   <li>Clean and professional design</li>
@@ -141,17 +149,19 @@ export default function SamplePage() {
                   Section 2: Additional Information
                 </h2>
                 <p className="text-[#64748b] leading-relaxed mb-6">
-                  You can add as many sections as needed for your content. Each section maintains proper spacing and typography hierarchy.
+                  You can add as many sections as needed for your content. Each
+                  section maintains proper spacing and typography hierarchy.
                 </p>
-                
+
                 <h3 className="text-xl font-semibold text-[#0c2857] mb-4">
                   Subsection Example
                 </h3>
                 <p className="text-[#64748b] leading-relaxed mb-4">
-                  This demonstrates how subsections can be structured within your content. The heading hierarchy helps with both readability and SEO.
+                  This demonstrates how subsections can be structured within
+                  your content. The heading hierarchy helps with both
+                  readability and SEO.
                 </p>
               </div>
-
             </motion.div>
           </div>
         </section>
@@ -188,7 +198,7 @@ export default function SamplePage() {
           },
         ]}
         badge={{
-          text: "Let’s Connect with Us",
+          text: "Proactive Engagement",
         }}
         title="Efficiency and Boost Revenue with AI-Driven Sales Tactics."
         subtitle="Cuoral brings your tools, teams and touchpoints together, creating one intelligent flow where insight, action and trust move as one."

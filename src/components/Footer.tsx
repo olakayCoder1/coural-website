@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function Footer() {
   const productLinks = [
-    { name: "Features", href: "#features", target: "_self" },
-    { name: "Pricing", href: "#pricing", target: "_self" },
+    { name: "Features", href: "/#features", target: "_self" },
+    { name: "Pricing", href: "/#pricing", target: "_self" },
     { name: "Developer", href: "https://docs.cuoral.com/", target: "_blank" },
     {
       name: "Developer API",
@@ -21,15 +21,17 @@ export default function Footer() {
   ];
 
   const companyLinks = [
+    { name: "Blog", href: "https://coural.medium.com/", target: "_blank" },
+    { name: "Contact", href: "/contact-us", target: "_self" },
     { name: "About Us", href: "#", target: "_self" },
     { name: "Careers", href: "#", target: "_self" },
-    { name: "Blog", href: "https://coural.medium.com/", target: "_blank" },
-    { name: "Contact", href: "#", target: "_self" },
   ];
 
   const resourceLinks = [
+    { name: "FAQs", href: "/faq", target: "_self" },
     { name: "Help Center", href: "#", target: "_self" },
-    { name: "FAQs", href: "#", target: "_self" },
+    { name: "Cuoral VS Intercom", href: "/cuoral-intercom", target: "_self" },
+    { name: "Cuoral VS Tawk.to", href: "/cuoral-tawkto", target: "_self" },
   ];
 
   const socialLinks = [
@@ -223,22 +225,16 @@ export default function Footer() {
           {/* Legal Links */}
           <div className="flex flex-wrap justify-center md:justify-end space-x-4 sm:space-x-6">
             <a
-              href="#"
+              href="/privacy-policy"
               className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Privacy Policy
             </a>
             <a
-              href="#"
+              href="/term-of-service"
               className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
             >
               Terms Of Service
-            </a>
-            <a
-              href="#"
-              className="text-sm sm:text-base text-[#232937] hover:text-[#0c2857] transition-colors duration-200"
-            >
-              Cookie Settings
             </a>
           </div>
         </motion.div>
