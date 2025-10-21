@@ -232,6 +232,7 @@ export default function BlogSection() {
               {/* Read More Link */}
               <a
                 href={blogPosts[2].readMoreLink}
+                target="_blank"
                 className="inline-flex items-center  font-medium transition-colors duration-200 text-sm text-[#232937]"
               >
                 Read More
