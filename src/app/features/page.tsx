@@ -1,21 +1,16 @@
 "use client";
 
-import TrustedBySection from "@/components/TrustedBySection";
-import FeaturesSection from "@/components/FeaturesSection";
-import StatsSection from "@/components/StatsSection";
-import IntegrationsSection from "@/components/IntegrationsSection";
-import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
-import PricingSection from "@/components/PricingSection";
-import FAQSection from "@/components/FAQSection";
-import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";
-import HowItWorksSection from "@/components/HowItWorksSection";
-import HeroV2 from "@/components/HeroV2";
 import HeroCTA from "@/components/HeroCTA";
+import HeroV2 from "@/components/HeroV2";
+import TrustedBySection from "@/components/TrustedBySection";
+import FAQSection from "@/components/FAQSection";
+import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
+import FeatureCoural from "@/components/FeatureCoural";
 
-export default function Home() {
+export default function FeaturePage() {
   return (
-    <div className="min-h-screen relative">
+    <div className="min-h-screen bg-white">
       <HeroV2
         backgroundLayers={[
           {
@@ -46,21 +41,12 @@ export default function Home() {
           },
         ]}
         badge={{
-          text: "Build Trust. Detect Friction. Grow Confidently",
+          text: "Features",
         }}
-        title="Connect Better with<br />Your Customers"
-        subtitle="Turn every customer moment into a trust-building experience powered by Cuoral Intelligence helping your team detect friction early, respond proactively, and create connections that last."
+        title="Powerful features"
+        subtitle="Leverage cutting-edge artificial intelligence to automate, optimize, and scale your business—no coding required."
         // subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
-        primaryButton={{
-          text: "Try for Free",
-          href: "https://app.cuoral.com/",
-          target: "_blank",
-        }}
-        secondaryButton={{
-          text: "Request a Demo",
-          href: "https://app.cuoral.com/",
-          target: "_blank",
-        }}
+        
         dashboardImage={{
           src: "/images/dashboard-v1.svg",
           alt: "Curoal Dashboard Overview",
@@ -74,17 +60,8 @@ export default function Home() {
       {/* Trusted By Section */}
       <TrustedBySection />
 
-      {/* How It Works Section */}
-      <HowItWorksSection />
 
-      {/* Features Section */}
-      <FeaturesSection />
-
-      {/* Stats Section */}
-      <StatsSection />
-
-      {/* Integrations Section */}
-      <IntegrationsSection
+      <FeatureCoural
         backgroundLayers={[
           {
             type: "image",
@@ -113,22 +90,28 @@ export default function Home() {
             },
           },
         ]}
+        badge={{
+          text: "Integrations",
+        }}
+        title="Seamless Integration."
+        subtitle="Seamless integration refers to the smooth and efficient connection of different software systems, platforms, or tools without disruptions or compatibility issues. It allows data and processes to flow effortlessly between systems, improving productivity and reducing manual work."
+
+        showFloatingElements={true}
+        className="pt-20"
+        heroImage={{
+          src: "/images/features/finance.svg",
+          alt: "Curoal Finance Overview",
+          width: 1200,
+          height: 800,
+        }}
       />
+
 
       {/* Why Choose Cuoral Section */}
       <WhyChooseCuoralSection />
 
-      {/* Pricing Section */}
-      <PricingSection />
-
-      {/* Testimonials Section */}
-      {/* <TestimonialsSection /> */}
-
       {/* FAQ Section */}
       <FAQSection />
-
-      {/* Blog Section */}
-      <BlogSection />
 
       {/* CTA Section */}
       <HeroCTA
@@ -161,9 +144,9 @@ export default function Home() {
           },
         ]}
         badge={{
-          text: "Integrations",
+          text: "Let’s Connect with Us",
         }}
-        title="Connect Every System.<br /> Understand Every Signal"
+        title="Efficiency and Boost Revenue with AI-Driven Sales Tactics."
         subtitle="Cuoral brings your tools, teams and touchpoints together, creating one intelligent flow where insight, action and trust move as one."
         primaryButton={{
           text: "Try for Free",
