@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import BadgeWithImage from './BadgeWithImage';
 import { Button } from './Button';
+import { LinkButton } from './LinkButton';
 
 interface BackgroundLayer {
   type: 'image' | 'gradient' | 'color';
@@ -28,12 +29,14 @@ interface HeroV2Props {
   subtitle: string;
   primaryButton?: {
     text: string;
-    onClick?: () => void;
+    href: string;
+    target?: "_blank" | "_self" | "_parent" | "_top";
     className?: string;
   };
   secondaryButton?: {
     text: string;
-    onClick?: () => void;
+    href: string;
+    target?: "_blank" | "_self" | "_parent" | "_top";
     className?: string;
   };
   dashboardImage?: {
@@ -200,24 +203,21 @@ export default function HeroCTA({
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               {primaryButton && (
-                <motion.div
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+                <LinkButton
+                  href={primaryButton.href}
+                  target={primaryButton.target}
                 >
-                  <Button onClick={primaryButton.onClick}>
-                    {primaryButton.text}
-                  </Button>
-                </motion.div>
+                  {primaryButton.text}
+                </LinkButton>
               )}
               {secondaryButton && (
-                <motion.div
-                  whileHover={{ scale: 1.02, y: -2 }}
-                  whileTap={{ scale: 0.98 }}
+                <LinkButton
+                  href={secondaryButton.href}
+                  target={secondaryButton.target}
+                  variant="secondary"
                 >
-                  <Button onClick={secondaryButton.onClick} variant="secondary">
-                    {secondaryButton.text}
-                  </Button>
-                </motion.div>
+                  {secondaryButton.text}
+                </LinkButton>
               )}
             </motion.div>
           )}

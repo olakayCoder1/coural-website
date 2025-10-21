@@ -46,11 +46,13 @@ export default function HeroV2Demo() {
         subtitle="Curoal helps businesses engage, support, and<br />grow with a unified customer platform."
         primaryButton={{
           text: "Try for Free",
-          onClick: () => console.log("Try for Free clicked")
+          href: "https://app.cuoral.com/",
+          target: "_blank"
         }}
         secondaryButton={{
           text: "Request a Demo",
-          onClick: () => console.log("Request a Demo clicked")
+          href: "https://calendly.com/team-cuoral/cuoral-meeting",
+          target: "_blank"
         }}
         dashboardImage={{
           src: "/images/dashboard.svg",

@@ -1,29 +1,29 @@
-'use client';
+"use client";
 
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { useRef, useEffect } from 'react';
-import Image from 'next/image';
-import BadgeWithImage from './BadgeWithImage';
-import { Button } from './Button';
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
+import Image from "next/image";
+import BadgeWithImage from "./BadgeWithImage";
+import { Button } from "./Button";
 
 export default function BlogSection() {
   const headerRef = useRef(null);
   const headerControls = useAnimation();
-  const headerInView = useInView(headerRef, { once: true, margin: '-100px' });
+  const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   const postsRef = useRef(null);
   const postsControls = useAnimation();
-  const postsInView = useInView(postsRef, { once: true, margin: '-100px' });
+  const postsInView = useInView(postsRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (headerInView) {
-      headerControls.start('visible');
+      headerControls.start("visible");
     }
   }, [headerInView, headerControls]);
 
   useEffect(() => {
     if (postsInView) {
-      postsControls.start('visible');
+      postsControls.start("visible");
     }
   }, [postsInView, postsControls]);
 
@@ -53,34 +53,39 @@ export default function BlogSection() {
   const blogPosts = [
     {
       id: 1,
-      category: "Finance",
-      date: "Oct 10, 2025",
-      author: "John Doe",
-      title: "Smart Payment Management For Task Automation.",
-      description: "Track and optimize all your transactions from one centralized dashboard.",
+      category: "Customer Experience",
+      date: "Sept 25, 2025",
+      author: "Cuoral Team",
+      title:
+        "The Silent Churn Epidemic: Why Your Users Leave Without Saying Goodbye",
+      description:
+        "Most customers don’t cancel, they quietly drift away. Here’s how data and behavior insights can help you catch them before they do.",
       image: "/images/blog-image.avif",
-      readMoreLink: "#"
+      readMoreLink: "https://cuoral.medium.com/",
     },
     {
       id: 2,
-      category: "Finance",
-      date: "Oct 10, 2025",
-      author: "John Doe",
-      title: "Smart Payment Management For Task Automation.",
-      description: "Track and optimize all your transactions from one centralized dashboard.",
-      image: "/images/blog-image.avif",
-      readMoreLink: "#"
+      category: "AI & Automation",
+      date: "Oct 1, 2025",
+      author: "Cuoral Team",
+      title: "How AI Is Redefining Customer Support in Africa",
+      description:
+        "AI isn’t replacing support teams, it’s making them superhuman. Discover how intelligent automation is changing how businesses connect with customers.",
+      image: "/images/3327755.jpg",
+      readMoreLink: "https://cuoral.medium.com/",
     },
     {
       id: 3,
-      category: "Finance",
+      category: "Growth & Retention",
       date: "Oct 10, 2025",
-      author: "John Doe",
-      title: "Smart Payment Management For Task Automation.",
-      description: "Track and optimize all your transactions from one centralized dashboard.",
-      image: "/images/blog-image.avif",
-      readMoreLink: "#"
-    }
+      author: "Cuoral Team",
+      title:
+        "From Feedback to Growth: Turning Customer Insights into Business Wins",
+      description:
+        "Every chat, click, and complaint hides an opportunity. Learn how to transform customer feedback into strategies that fuel retention and revenue.",
+      image: "/images/2149346511.jpg",
+      readMoreLink: "https://cuoral.medium.com/",
+    },
   ];
 
   return (
@@ -110,7 +115,9 @@ export default function BlogSection() {
               variants={headerItemVariants}
               className="text-base sm:text-lg text-[#232937] leading-relaxed max-w-2xl mx-auto"
             >
-              Explore fresh perspectives on Customer Intelligence, Trust Stack and Digital Experience. Ideas shaping how modern businesses connect and grow.
+              Explore fresh perspectives on Customer Intelligence, Trust Stack
+              and Digital Experience. Ideas shaping how modern businesses
+              connect and grow.
             </motion.p>
           </motion.div>
         </div>
@@ -140,11 +147,11 @@ export default function BlogSection() {
                 />
                 {/* Category Badge Overlay */}
                 <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                  <BadgeWithImage  
-                  text={post.category}  
-                  extendBaseClass={true} 
-                  className=' text-gray-700 py-1 px-2 rounded-full'
-                  imageClassName='w-3 h-3 mr-2'
+                  <BadgeWithImage
+                    text={post.category}
+                    extendBaseClass={true}
+                    className=" text-gray-700 py-1 px-2 rounded-full"
+                    imageClassName="w-3 h-3 mr-2"
                   />
                 </div>
               </div>
@@ -195,11 +202,9 @@ export default function BlogSection() {
                 className="object-cover hover:scale-105 transition-transform duration-300"
               />
               {/* Category Badge Overlay */}
-              
+
               <div className="absolute top-3 sm:top-4 left-3 sm:left-4">
-                <BadgeWithImage  
-                text={blogPosts[2].category}  
-                />
+                <BadgeWithImage text={blogPosts[2].category} />
               </div>
             </div>
 
@@ -230,7 +235,6 @@ export default function BlogSection() {
                 className="inline-flex items-center  font-medium transition-colors duration-200 text-sm text-[#232937]"
               >
                 Read More
-          
               </a>
             </div>
           </motion.article>
@@ -251,21 +255,27 @@ export default function BlogSection() {
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 flex-1">
               {/* Blue Icon - Simple Square/Cube */}
               {/* Text Content */}
-              <div className='flex-1'>
+              <div className="flex-1">
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2">
                   Want to read more blogs?
                 </h3>
                 <p className="text-[#232937] text-sm leading-relaxed">
-                  Our platform is crafted to deliver seamless functionality across every touchpoint.
+                  Our platform is crafted to deliver seamless functionality
+                  across every touchpoint.
                 </p>
               </div>
               <div className="sm:ml-6 flex-shrink-0">
-              <Button>Explore More</Button>
-            </div>
+                <Button
+                  onClick={() =>
+                    window.open("https://cuoral.medium.com", "_blank")
+                  }
+                >
+                  Explore More
+                </Button>
+              </div>
             </div>
 
             {/* Right side - Button */}
-            
           </motion.div>
         </motion.div>
       </div>

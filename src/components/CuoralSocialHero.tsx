@@ -68,7 +68,7 @@ export default function CuoralHero() {
               alt="Cuoral Logo"
               width={360}
               height={360}
-              className="h-36 w-[250px]"
+              className="h-40 w-[250px]"
               priority
             />
           </div>

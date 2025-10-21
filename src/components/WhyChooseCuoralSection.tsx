@@ -1,59 +1,66 @@
-'use client';
+"use client";
 
-import { motion, useInView, useAnimation } from 'framer-motion';
-import { useRef, useEffect } from 'react';
-import Image from 'next/image';
-import BadgeWithImage from './BadgeWithImage';
-import ChatInterfaceWhyChooseUs from './ChatInterfaceWhyChooseUs';
+import { motion, useInView, useAnimation } from "framer-motion";
+import { useRef, useEffect } from "react";
+import Image from "next/image";
+import BadgeWithImage from "./BadgeWithImage";
+import ChatInterfaceWhyChooseUs from "./ChatInterfaceWhyChooseUs";
 
 export default function WhyChooseCuoralSection() {
   const headerRef = useRef(null);
   const headerControls = useAnimation();
-  const headerInView = useInView(headerRef, { once: true, margin: '-100px' });
+  const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
 
   const mobileFeaturesRef = useRef(null);
   const mobileFeaturesControls = useAnimation();
-  const mobileFeaturesInView = useInView(mobileFeaturesRef, { once: true, margin: '-100px' });
+  const mobileFeaturesInView = useInView(mobileFeaturesRef, {
+    once: true,
+    margin: "-100px",
+  });
 
   const leftRef = useRef(null);
   const leftControls = useAnimation();
-  const leftInView = useInView(leftRef, { once: true, margin: '-100px' });
+  const leftInView = useInView(leftRef, { once: true, margin: "-100px" });
 
   const rightRef = useRef(null);
   const rightControls = useAnimation();
-  const rightInView = useInView(rightRef, { once: true, margin: '-100px' });
+  const rightInView = useInView(rightRef, { once: true, margin: "-100px" });
 
   const centerRef = useRef(null);
   const centerControls = useAnimation();
-  const centerInView = useInView(centerRef, { once: true, margin: '-100px' });
+  const centerInView = useInView(centerRef, { once: true, margin: "-100px" });
 
   useEffect(() => {
     if (headerInView) {
-      headerControls.start('visible');
+      headerControls.start("visible");
     }
   }, [headerInView, headerControls]);
 
   useEffect(() => {
     if (mobileFeaturesInView) {
-      mobileFeaturesControls.start('visible');
+      mobileFeaturesControls.start("visible");
     }
   }, [mobileFeaturesInView, mobileFeaturesControls]);
 
   useEffect(() => {
     if (leftInView) {
-      leftControls.start('visible');
+      leftControls.start("visible");
     }
   }, [leftInView, leftControls]);
 
   useEffect(() => {
     if (rightInView) {
-      rightControls.start('visible');
+      rightControls.start("visible");
     }
   }, [rightInView, rightControls]);
 
   useEffect(() => {
     if (centerInView) {
-      centerControls.start({ opacity: 1, scale: 1, transition: { duration: 0.8 } });
+      centerControls.start({
+        opacity: 1,
+        scale: 1,
+        transition: { duration: 0.8 },
+      });
     }
   }, [centerInView, centerControls]);
 
@@ -82,7 +89,7 @@ export default function WhyChooseCuoralSection() {
 
   const leftFeatureVariants = {
     hidden: { opacity: 0, x: -30 },
-    visible: (i:number) => ({
+    visible: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: {
@@ -94,7 +101,7 @@ export default function WhyChooseCuoralSection() {
 
   const rightFeatureVariants = {
     hidden: { opacity: 0, x: 30 },
-    visible: (i:number) => ({
+    visible: (i: number) => ({
       opacity: 1,
       x: 0,
       transition: {
@@ -106,51 +113,57 @@ export default function WhyChooseCuoralSection() {
 
   const leftColumnFeatures = [
     {
-      id: 'unified-communication',
-      title: 'Unified Communication',
-      description: 'All your customer interactions, chat, email, automation, in one intelligent view. No silos, no switching, just clarity.',
-      icon: '/images/icons/message-1.jpg'
+      id: "unified-communication",
+      title: "Unified Communication",
+      description:
+        "All your customer interactions, chat, email, automation, in one intelligent view. No silos, no switching, just clarity.",
+      icon: "/images/icons/message-1.jpg",
     },
     {
-      id: 'smart-automation',
-      title: 'Smart Automation',
-      description: 'Let Cuoral handle the repetitive. Intelligent routing, human responses, zero lag in customer care.',
-      icon: '/images/icons/setting.png'
+      id: "smart-automation",
+      title: "Smart Automation",
+      description:
+        "Let Cuoral handle the repetitive. Intelligent routing, human responses, zero lag in customer care.",
+      icon: "/images/icons/setting.png",
     },
     {
-      id: 'advance-analytics',
-      title: 'Advance Analytics',
-      description: 'See what your dashboards miss. Real-time insights that help you act faster and grow smarter.',
-      icon: '/images/icons/chart.png'
-    }
+      id: "advance-analytics",
+      title: "Advance Analytics",
+      description:
+        "See what your dashboards miss. Real-time insights that help you act faster and grow smarter.",
+      icon: "/images/icons/chart.png",
+    },
   ];
 
   const rightColumnFeatures = [
     {
-      id: 'ai-powered-support',
-      title: 'AI-Powered Support',
-      description: 'Instant, reliable assistance powered by AI that knows when to help and when to escalate.',
-      icon: '/images/icons/support.png'
+      id: "ai-powered-support",
+      title: "AI-Powered Support",
+      description:
+        "Instant, reliable assistance powered by AI that knows when to help and when to escalate.",
+      icon: "/images/icons/support.png",
     },
     {
-      id: 'proactive-engagement',
-      title: 'Proactive Engagement',
-      description: 'Detect friction early. Respond with context, not crisis. Stay ahead of every customer moment.',
-      icon: '/images/icons/notification.png'
+      id: "proactive-engagement",
+      title: "Proactive Engagement",
+      description:
+        "Detect friction early. Respond with context, not crisis. Stay ahead of every customer moment.",
+      icon: "/images/icons/notification.png",
     },
     {
-      id: 'customer-intelligence',
-      title: 'Customer Intelligence',
-      description: 'Understand users beyond the data. Their behavior, emotions, and trust triggers.',
-      icon: '/images/icons/brain.png'
-    }
+      id: "customer-intelligence",
+      title: "Customer Intelligence",
+      description:
+        "Understand users beyond the data. Their behavior, emotions, and trust triggers.",
+      icon: "/images/icons/brain.png",
+    },
   ];
 
   // Combined features for mobile layout
   const allFeatures = [...leftColumnFeatures, ...rightColumnFeatures];
 
   return (
-    <section className="py-16 sm:py-20 lg:py-24 bg-white">
+    <section className="py-16 sm:py-20 lg:py-24 bg-white" id="features">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header Section */}
         <div ref={headerRef} className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -160,7 +173,7 @@ export default function WhyChooseCuoralSection() {
             variants={containerVariants}
           >
             <motion.div variants={headerItemVariants}>
-              <BadgeWithImage text="Features"  />
+              <BadgeWithImage text="Features" />
             </motion.div>
 
             {/* Header */}
@@ -176,9 +189,9 @@ export default function WhyChooseCuoralSection() {
               variants={headerItemVariants}
               className="text-base sm:text-lg text-[#232937] max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
-            Growth begins with trust.
-            Cuoral unifies visibility, intelligence, and 
-            <br className="hidden sm:block" />
+              Growth begins with trust. Cuoral unifies visibility, intelligence,
+              and
+              <br className="hidden sm:block" />
               reliability across every customer moment.
             </motion.p>
           </motion.div>
@@ -199,7 +212,6 @@ export default function WhyChooseCuoralSection() {
                 key={feature.id}
                 className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                 variants={mobileFeatureVariants}
-                
               >
                 <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                   <Image
@@ -259,7 +271,7 @@ export default function WhyChooseCuoralSection() {
             {/* Center Column - Chat Interface */}
             <motion.div
               ref={centerRef}
-              className="flex items-center justify-center bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl"
+              className="flex items-center justify-center bg-gradient-to-br from-blue-10 to-indigo-10 rounded-2xl"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={centerControls}
             >
@@ -279,7 +291,7 @@ export default function WhyChooseCuoralSection() {
                   key={feature.id}
                   custom={index}
                   variants={rightFeatureVariants}
-                  className="bg-white p-4 transition-all duration-300"
+                  className="bg-white p-5 transition-all duration-300"
                 >
                   <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4">
                     <Image
