@@ -6,7 +6,6 @@ import StatsSection from "@/components/StatsSection";
 import IntegrationsSection from "@/components/IntegrationsSection";
 import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
 import PricingSection from "@/components/PricingSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import BlogSection from "@/components/BlogSection";
 import Footer from "@/components/Footer";

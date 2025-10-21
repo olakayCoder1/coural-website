@@ -1,18 +1,12 @@
 "use client";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
-import Image from "next/image";
 import HeroCTA from "@/components/HeroCTA";
 import HeroV2 from "@/components/HeroV2";
-import PricingSection from "@/components/PricingSection";
-import BadgeWithImage from "@/components/BadgeWithImage";
 import TrustedBySection from "@/components/TrustedBySection";
-import ComparisonTable from "@/components/ComparisonTable";
 import FAQSection from "@/components/FAQSection";
-import { FeatureComparisonTable } from "@/components/FeatureComparisonTable";
 import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
+import FeatureCoural from "@/components/FeatureCoural";
 
 export default function FeaturePage() {
   return (
@@ -67,18 +61,54 @@ export default function FeaturePage() {
       <TrustedBySection />
 
 
+      <FeatureCoural
+        backgroundLayers={[
+          {
+            type: "image",
+            src: "/images/Background.png",
+            alt: "Main background",
+            className: "z-0",
+          },
+          {
+            type: "image",
+            src: "/images/vector-left.png",
+            alt: "Left vector overlay",
+            className: "z-10",
+            style: {
+              objectPosition: "left center",
+              objectFit: "contain",
+            },
+          },
+          {
+            type: "image",
+            src: "/images/vector-right.png",
+            alt: "Right vector overlay",
+            className: "z-10",
+            style: {
+              objectPosition: "right center",
+              objectFit: "contain",
+            },
+          },
+        ]}
+        badge={{
+          text: "Integrations",
+        }}
+        title="Seamless Integration."
+        subtitle="Seamless integration refers to the smooth and efficient connection of different software systems, platforms, or tools without disruptions or compatibility issues. It allows data and processes to flow effortlessly between systems, improving productivity and reducing manual work."
+
+        showFloatingElements={true}
+        className="pt-20"
+        heroImage={{
+          src: "/images/features/finance.svg",
+          alt: "Curoal Finance Overview",
+          width: 1200,
+          height: 800,
+        }}
+      />
+
+
       {/* Why Choose Cuoral Section */}
       <WhyChooseCuoralSection />
-
-
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto pt-20 lg:pt-24">
-      
-      </main>
-
-
-
 
       {/* FAQ Section */}
       <FAQSection />
