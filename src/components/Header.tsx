@@ -16,7 +16,7 @@ export default function Header() {
 
   const navigationItems = [
     { href: "/", label: "Home", target: "_self" },
-    { href: "#features", label: "Features", target: "_self" },
+    { href: "/features", label: "Features", target: "_self" },
     { href: "/pricing", label: "Pricing", target: "_self" },
     { href: "https://coural.medium.com/", label: "Blog", target: "_blank" },
     {
