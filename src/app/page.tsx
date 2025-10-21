@@ -127,7 +127,7 @@ export default function Home() {
       {/* FAQ Section */}
       <FAQSection />
 
-      {/* Blog Section */}
+      {/* Blog Section */} 
       <BlogSection />
 
       {/* CTA Section */}
