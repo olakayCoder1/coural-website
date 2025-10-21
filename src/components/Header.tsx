@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "./Button";
 import { LinkButton } from "./LinkButton";
 import { motion, AnimatePresence } from "framer-motion";
@@ -14,9 +15,9 @@ export default function Header() {
   };
 
   const navigationItems = [
-    { href: "#", label: "Home", target: "_self" },
+    { href: "/", label: "Home", target: "_self" },
     { href: "#features", label: "Features", target: "_self" },
-    { href: "#pricing", label: "Pricing", target: "_self" },
+    { href: "/pricing", label: "Pricing", target: "_self" },
     { href: "https://coural.medium.com/", label: "Blog", target: "_blank" },
     {
       href: "https://docs.coural.com/",
