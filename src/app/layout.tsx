@@ -100,6 +100,20 @@ export default function RootLayout({
           defer
           data-cuoral-key="c8e3081e-8dfc-49b5-bbd1-4ef513504d88"
         />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-B35Q7G3H9P"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-B35Q7G3H9P');
+        `}
+        </Script>
       </body>
     </html>
   );
