@@ -12,6 +12,8 @@ import TrustedBySection from "@/components/TrustedBySection";
 import ComparisonTable from "@/components/ComparisonTable";
 import FAQSection from "@/components/FAQSection";
 import { FeatureComparisonTable } from "@/components/FeatureComparisonTable";
+import { FeatureComparisonTable as  FeatureComparisonTableV2 } from "@/components/FeatureComparisonTableV2";
+import { PricingV2 } from "@/components/PricingV2";
 
 export default function SamplePage() {
   return (
@@ -54,7 +56,9 @@ export default function SamplePage() {
         className="px-2 sm:px-2 lg:px-2 "
       />
 
-      <PricingSection />
+      {/* <PricingSection /> */}
+
+      <PricingV2 />
 
 
       {/* Main Content */}
@@ -84,7 +88,7 @@ export default function SamplePage() {
         </motion.p>
 
         {/* Comparison Table */}
-        <FeatureComparisonTable />
+        <FeatureComparisonTableV2 />
       </main>
 
 
