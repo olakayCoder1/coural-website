@@ -4,9 +4,8 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import BadgeWithImage from "./BadgeWithImage";
-import ChatInterfaceWhyChooseUs from "./ChatInterfaceWhyChooseUs";
 
-export default function WhyChooseCuoralSection() {
+export default function WhyChooseCuoralSectionNoImage() {
   const headerRef = useRef(null);
   const headerControls = useAnimation();
   const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
@@ -117,21 +116,21 @@ export default function WhyChooseCuoralSection() {
       title: "Unified Communication",
       description:
         "All your customer interactions, chat, email, automation, in one intelligent view. No silos, no switching, just clarity.",
-      icon: "/images/why/customer-support.png",
+      icon: "/images/icons/message-1.jpg",
     },
     {
       id: "smart-automation",
       title: "Smart Automation",
       description:
         "Let Cuoral handle the repetitive. Intelligent routing, human responses, zero lag in customer care.",
-      icon: "/images/why/brain.gif",
+      icon: "/images/icons/setting.png",
     },
     {
       id: "advance-analytics",
       title: "Advance Analytics",
       description:
         "See what your dashboards miss. Real-time insights that help you act faster and grow smarter.",
-      icon: "/images/why/analytics.gif",
+      icon: "/images/icons/chart.png",
     },
   ];
 
@@ -141,21 +140,21 @@ export default function WhyChooseCuoralSection() {
       title: "AI-Powered Support",
       description:
         "Instant, reliable assistance powered by AI that knows when to help and when to escalate.",
-      icon: "/images/why/helpdesk.png",
+      icon: "/images/icons/support.png",
     },
     {
       id: "proactive-engagement",
       title: "Proactive Engagement",
       description:
         "Detect friction early. Respond with context, not crisis. Stay ahead of every customer moment.",
-      icon: "/images/why/engagement.png",
+      icon: "/images/icons/notification.png",
     },
     {
       id: "customer-intelligence",
       title: "Customer Intelligence",
       description:
         "Understand users beyond the data. Their behavior, emotions, and trust triggers.",
-      icon: "/images/why/artificial-intelligence.gif",
+      icon: "/images/icons/brain.png",
     },
   ];
 
@@ -173,7 +172,7 @@ export default function WhyChooseCuoralSection() {
             variants={containerVariants}
           >
             <motion.div variants={headerItemVariants}>
-              <BadgeWithImage text="Key Benefit" />
+              <BadgeWithImage text="Why Us" />
             </motion.div>
 
             {/* Header */}
@@ -189,10 +188,9 @@ export default function WhyChooseCuoralSection() {
               variants={headerItemVariants}
               className="text-base sm:text-lg text-[#232937] max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
-              Growth begins with trust. Cuoral unifies visibility, intelligence,
-              and
+              Our platform is designed with seamless integration in mind, allowing you to connect it to your favorite apps.
               <br className="hidden sm:block" />
-              reliability across every customer moment.
+              {/* reliability across every customer moment. */}
             </motion.p>
           </motion.div>
         </div>
@@ -213,13 +211,13 @@ export default function WhyChooseCuoralSection() {
                 className="bg-white p-4 sm:p-6 rounded-lg border border-gray-100 hover:shadow-lg transition-shadow duration-300"
                 variants={mobileFeatureVariants}
               >
-                <div className="w-9 h-9 sm:w-10 sm:h-10 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
                   <Image
                     src={feature.icon}
-                    alt={feature.title + " source Flaticons"}
-                    width={30}
-                    height={30}
-                    className="w-6 h-6 sm:w-8 sm:h-8"
+                    alt={feature.title}
+                    width={24}
+                    height={24}
+                    className="w-5 h-5 sm:w-6 sm:h-6"
                   />
                 </div>
                 <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 sm:mb-3">
@@ -269,13 +267,45 @@ export default function WhyChooseCuoralSection() {
             </motion.div>
 
             {/* Center Column - Chat Interface */}
-            <motion.div
+            {/* <motion.div
               ref={centerRef}
               className="flex items-center justify-center bg-gradient-to-br from-blue-10 to-indigo-10 rounded-2xl"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={centerControls}
             >
               <ChatInterfaceWhyChooseUs />
+            </motion.div> */}
+            <motion.div
+              ref={rightRef}
+              className="flex flex-col justify-center"
+              initial="hidden"
+              animate={rightControls}
+              variants={containerVariants}
+            >
+              {rightColumnFeatures.map((feature, index) => (
+                <motion.div
+                  key={feature.id}
+                  custom={index}
+                  variants={rightFeatureVariants}
+                  className="bg-white p-5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={24}
+                      height={24}
+                      className="w-7 h-7"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed ml-2">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* Right Column - Features */}
@@ -302,7 +332,7 @@ export default function WhyChooseCuoralSection() {
                       className="w-7 h-7"
                     />
                   </div>
-                  <h3 className="text-lg font-bold text-shadow-sm text-[#0c2857] mb-3 leading-tight ml-2">
+                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
                     {feature.title}
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed ml-2">

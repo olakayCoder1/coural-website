@@ -7,6 +7,7 @@ import TrustedBySection from "@/components/TrustedBySection";
 import FAQSection from "@/components/FAQSection";
 import WhyChooseCuoralSection from "@/components/WhyChooseCuoralSection";
 import FeatureCoural from "@/components/FeatureCoural";
+import WhyChooseCuoralSectionNoImage from "@/components/WhyChooseCuoralSectionNoImage";
 
 export default function FeaturePage() {
   return (
@@ -54,7 +55,7 @@ export default function FeaturePage() {
           height: 800,
         }}
         showFloatingElements={true}
-        className=""
+        overlayClassName=" mt-16"
       />
 
       {/* Trusted By Section */}
@@ -106,6 +107,9 @@ export default function FeaturePage() {
         }}
       />
 
+
+      {/* Why Us */}
+      <WhyChooseCuoralSectionNoImage />
 
       {/* Why Choose Cuoral Section */}
       <WhyChooseCuoralSection />

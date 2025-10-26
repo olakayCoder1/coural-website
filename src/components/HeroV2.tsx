@@ -49,6 +49,7 @@ interface HeroV2Props {
   };
   showFloatingElements?: boolean;
   className?: string;
+  overlayClassName?: string;
 }
 
 export default function HeroV2({
@@ -60,6 +61,7 @@ export default function HeroV2({
   secondaryButton,
   dashboardImage,
   className = "",
+  overlayClassName= ""
 }: HeroV2Props) {
   return (
     <section
@@ -186,7 +188,7 @@ export default function HeroV2({
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full pt-16 lg:pt-32">
+      <div className={`relative z-10 max-w-7xl mx-auto w-full pt-16 lg:pt-32 ${overlayClassName}`}>
         <div className="text-center px-4 sm:px-0">
           {/* Badge */}
           {badge && (
