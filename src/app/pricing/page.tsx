@@ -1,18 +1,13 @@
 "use client";
 
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { motion } from "framer-motion";
-import Image from "next/image";
 import HeroCTA from "@/components/HeroCTA";
 import HeroV2 from "@/components/HeroV2";
-import PricingSection from "@/components/PricingSection";
 import BadgeWithImage from "@/components/BadgeWithImage";
 import TrustedBySection from "@/components/TrustedBySection";
-import ComparisonTable from "@/components/ComparisonTable";
 import FAQSection from "@/components/FAQSection";
-import { FeatureComparisonTable } from "@/components/FeatureComparisonTable";
-import { FeatureComparisonTable as  FeatureComparisonTableV2 } from "@/components/FeatureComparisonTableV2";
+import { FeatureComparisonTable as FeatureComparisonTableV2 } from "@/components/FeatureComparisonTableV2";
 import { PricingV2 } from "@/components/PricingV2";
 
 export default function SamplePage() {
