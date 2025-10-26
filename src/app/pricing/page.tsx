@@ -53,7 +53,8 @@ export default function SamplePage() {
         title="Discover the Perfect Fit for Your Business"
         subtitle="Leverage cutting-edge artificial intelligence to automate, optimize, and scale your business—no coding required."
         showFloatingElements={false}
-        className="px-2 sm:px-2 lg:px-2 "
+        className="px-2 sm:px-2 lg:px-2 !min-h-0"
+        overlayClassName="mt-12"
       />
 
       {/* <PricingSection /> */}
