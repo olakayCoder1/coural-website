@@ -4,9 +4,8 @@ import { motion, useInView, useAnimation } from "framer-motion";
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 import BadgeWithImage from "./BadgeWithImage";
-import ChatInterfaceWhyChooseUs from "./ChatInterfaceWhyChooseUs";
 
-export default function WhyChooseCuoralSection() {
+export default function WhyChooseCuoralSectionNoImage() {
   const headerRef = useRef(null);
   const headerControls = useAnimation();
   const headerInView = useInView(headerRef, { once: true, margin: "-100px" });
@@ -173,7 +172,7 @@ export default function WhyChooseCuoralSection() {
             variants={containerVariants}
           >
             <motion.div variants={headerItemVariants}>
-              <BadgeWithImage text="Key Benefit" />
+              <BadgeWithImage text="Why Us" />
             </motion.div>
 
             {/* Header */}
@@ -189,10 +188,9 @@ export default function WhyChooseCuoralSection() {
               variants={headerItemVariants}
               className="text-base sm:text-lg text-[#232937] max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             >
-              Growth begins with trust. Cuoral unifies visibility, intelligence,
-              and
+              Our platform is designed with seamless integration in mind, allowing you to connect it to your favorite apps.
               <br className="hidden sm:block" />
-              reliability across every customer moment.
+              {/* reliability across every customer moment. */}
             </motion.p>
           </motion.div>
         </div>
@@ -269,13 +267,45 @@ export default function WhyChooseCuoralSection() {
             </motion.div>
 
             {/* Center Column - Chat Interface */}
-            <motion.div
+            {/* <motion.div
               ref={centerRef}
               className="flex items-center justify-center bg-gradient-to-br from-blue-10 to-indigo-10 rounded-2xl"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={centerControls}
             >
               <ChatInterfaceWhyChooseUs />
+            </motion.div> */}
+            <motion.div
+              ref={rightRef}
+              className="flex flex-col justify-center"
+              initial="hidden"
+              animate={rightControls}
+              variants={containerVariants}
+            >
+              {rightColumnFeatures.map((feature, index) => (
+                <motion.div
+                  key={feature.id}
+                  custom={index}
+                  variants={rightFeatureVariants}
+                  className="bg-white p-5 transition-all duration-300"
+                >
+                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4">
+                    <Image
+                      src={feature.icon}
+                      alt={feature.title}
+                      width={24}
+                      height={24}
+                      className="w-7 h-7"
+                    />
+                  </div>
+                  <h3 className="text-lg font-bold text-[#0c2857] mb-3 leading-tight ml-2">
+                    {feature.title}
+                  </h3>
+                  <p className="text-sm text-gray-600 leading-relaxed ml-2">
+                    {feature.description}
+                  </p>
+                </motion.div>
+              ))}
             </motion.div>
 
             {/* Right Column - Features */}
